@@ -1,0 +1,85 @@
+@import '../../styles/global.scss';
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background-color: #000; //#090a16; //$color-complement-1;
+
+  .list {
+    position: relative;
+    width: 80vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    list-style: none;
+    margin: 0 2% 0 auto;
+    padding: 0;
+    background-color: $color-complement-1;
+
+    @media only screen and (min-width: $small-bp) {
+      width: 40vw;
+    }
+
+    button {
+      width: 100%;
+      margin: 0;
+      padding: 14px 0;
+      text-align: center;
+      mix-blend-mode: color-burn; // switch value with hover
+      font-family: 'Share', sans-serif;
+      font-size: 1rem;
+      transition: 0.5s;
+      background-color: $main-background-color;
+
+      @media only screen and (min-width: $small-bp) {
+        font-size: 1.2rem;
+
+        &:hover {
+          cursor: pointer;
+          mix-blend-mode: luminosity;
+        }
+      }
+    }
+  }
+
+  .active {
+    pointer-events: none;
+  }
+
+  hr {
+    position: absolute;
+    left: 0;
+    bottom: 20%;
+    z-index: 100;
+    width: calc(80vw / 5);
+    margin: 0;
+    border: .5px solid $secondary-text-color;
+
+    transform: translateX(calc(var(--activeNav) * 2vw));
+    transition: $scroll;
+
+    @media only screen and (min-width: $small-bp) {
+      left: 0;
+      width: calc(40vw / 5);
+      transform: translateX(calc(var(--activeNav) * 1vw));
+    }
+  }
+
+  .active-bg {
+    position: absolute;
+    left: 0;
+    width: calc(80vw / 5);
+    height: 100%;
+    background-color: $secondary-text-color;
+
+    transform: translateX(calc(var(--activeNav) * 2vw));
+    transition: $scroll;
+
+    @media only screen and (min-width: $small-bp) {
+      width: calc(40vw / 5);
+      transform: translateX(calc(var(--activeNav) * 1vw));
+    }
+  }
+}

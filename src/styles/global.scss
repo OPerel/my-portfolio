@@ -1,0 +1,155 @@
+/*
+  Global App CSS
+  ----------------------
+  Use this file for styles that should be applied to all components.
+  For example, "font-family" within the "body" selector is a CSS property
+  most apps will want applied to all components.
+
+  Any global CSS variables should also be applied here.
+*/
+@import 'node_modules/@ionic/core/css/core';
+
+// Colors
+
+$main-text-color: #AED6D4;
+$secondary-text-color: #f36344; //#E8BF9E; //#f57c62;
+$main-background-color: #090a16;
+$about-background-color: #226765;
+$skills-background-color: #0D5452;
+$portfolio-background-color: #151e1e;
+
+$color-complement-1: #608D8B;
+// #226765
+// used directly via js
+$color-complement-2: #3E7A78;
+
+
+// not used so far
+// Main Primary color */
+$color-primary-0: #AA6B39;
+// $color-primary-1: #E8BF9E;
+$color-primary-2: #C99266;
+$color-primary-3: #8B4A16;
+$color-primary-4: #6C3000;
+
+// Main Secondary color (1) */
+$color-secondary-1-0: #AA8A39;
+$color-secondary-1-1: #E8D39E;
+$color-secondary-1-2: #C9AD66;
+$color-secondary-1-3: #8B6A16;
+$color-secondary-1-4: #6C4D00;
+
+// Main Secondary color (2) */
+$color-secondary-2-0: #313A75;
+$color-secondary-2-1: #73799F;
+$color-secondary-2-2: #4F578A;
+$color-secondary-2-3: #1A235F;
+$color-secondary-2-4: #09124A;
+
+// Main Complement color */
+
+
+
+
+$color-complement-4: #00413F;
+
+// breakpoints
+
+$small-bp: 480px;
+$medium-bp: 768px;
+$large-bp: 1350px;
+
+// Animations
+
+$scroll: calc(calc(var(--sectionGap) / 1.4) * 1.8s) cubic-bezier(0.65, 0, 0.35, 1); /* easeInOutCubic --- calc(var(--sectionGap) * 1.s) */
+
+@font-face {
+  font-family: 'Share';
+  src: url('../assets/fonts/share.woff2');
+}
+
+@font-face {
+  font-family: 'Londrina Solid';
+  src: url('../assets/fonts/londrina.woff2');
+}
+
+html, body {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  font-family: 'Londrina Solid', sans-serif;
+  --ion-font-family: 'Londrina Solid', sans-serif;
+  color: $main-text-color;
+  background-color: $main-background-color;
+}
+
+main {
+  position: relative;
+  transform: translateY(calc(var(--scrollpos) * 1vh));
+  transition: $scroll;
+  z-index: 1;
+}
+
+.keyboard-open {
+  transition: none !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0.5em 0;
+  font-family: 'Londrina Solid', sans-serif;
+  //font-size: 2rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+
+  @media only screen and (min-width: $small-bp) {
+    font-size: 2.3rem;
+  }
+}
+
+p {
+  font-size: 1.3rem;
+
+  @media only screen and (min-width: $small-bp) {
+    font-size: 1.5rem;
+  }
+}
+
+a {
+  color: $secondary-text-color;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+section {
+  display: grid;
+  align-content: center;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+
+  z-index: 2;
+
+  @media only screen and (min-width: $small-bp) {
+    width: 80%;
+  }
+
+  @media only screen and (min-width: $medium-bp) {
+    width: 70%;
+  }
+}
+
+
