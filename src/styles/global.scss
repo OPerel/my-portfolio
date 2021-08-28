@@ -78,7 +78,7 @@ html, body {
 
 main {
   position: relative;
-  transform: translateY(calc(var(--scrollpos) * 1vh));
+  transform: translateY(calc(var(--scrollPos) * 1vh));
   transition: $scroll;
   z-index: 1;
 }

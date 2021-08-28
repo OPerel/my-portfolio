@@ -1,7 +1,6 @@
 import * as React from "react";
 import { IonApp } from "@ionic/react";
 import { useScrollContext } from "../components/ScrollingProvider";
-import { animated, config, useSpring } from "react-spring"
 import Home from "../components/Home/Home";
 import Header from "../components/Header/Header";
 import About from "../components/About/About";
@@ -832,12 +831,7 @@ const data = {
 
 const IndexPage = () => {
 
-  const { position: { currentPage }, animeProps } = useScrollContext();
-
-  const props = useSpring({
-    to: { y: `${animeProps.scrollPos}vh` },
-    config: config.molasses
-  })
+  const { position: { currentPage } } = useScrollContext();
 
   const getAnimeClass = (pageIdx) => {
     if (currentPage > pageIdx) {
@@ -849,17 +843,15 @@ const IndexPage = () => {
     return 'on';
   }
 
-  console.log('animeProps index: ', animeProps)
-
   return (
     <IonApp>
       <Header />
-      <animated.main style={props}>
-        <Home
+      <main>
+        {data && <Home
           animeClass={getAnimeClass(0)}
-          name={'Ori Perelman'}
-          label={'Web Developer'}
-        />
+          name={"Ori Perelman"}
+          label={"Web Developer"}
+        />}
         <About
           animeClass={getAnimeClass(1)}
           summary={data?.basics.summary || ''}
@@ -873,7 +865,7 @@ const IndexPage = () => {
           skills={data?.skills || ''}
           work={data?.work || ''}
         />
-      </animated.main>
+      </main>
       <Footer />
 
       <arrow-nav currentPage={currentPage} />

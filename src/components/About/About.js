@@ -1,17 +1,19 @@
-import React from "react"
+import React from "react";
+import './About.scss';
+import Parallax from "../Parallax/Parallax"
 
 const About = ({ animeClass, summary}) => {
   return (
     <section className="app-about">
       <div className="container">
-        {/*<parallax-el animeClass={animeClass} on={0} under={60} over={-50}>*/}
+        <Parallax animeClass={animeClass} positions={{ on: 0, under: 60, over: -50 }}>
           <h2>About Me</h2>
-        {/*</parallax-el>*/}
+        </Parallax>
 
         <div className="img-wrapper">
-          {/*<parallax-el animeClass={this.animeClass} on={0} under={-50} over={80}>*/}
+          <Parallax animeClass={animeClass} positions={{ on: 0, under: -50, over: 80 }}>
             <div className="right-line" />
-          {/*</parallax-el>*/}
+          </Parallax>
           <div className="bottom-line" />
           <div className="my-image" />
         </div>

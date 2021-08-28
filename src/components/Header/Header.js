@@ -1,23 +1,17 @@
 import React from "react";
-import { animated, config, useSpring } from "react-spring"
 import { useScrollContext } from "../ScrollingProvider";
 import './Header.scss';
 
 const Header = () => {
 
-  const { position: { currentPage }, animeProps: { activeNav }, handleNavigation } = useScrollContext();
-  const large = window.matchMedia('(min-width: 480px)')
-  const props = useSpring({
-    to: { x: `${activeNav * (large.matches ? 1 : 2)}vw` },
-    config: config.molasses
-  })
+  const { position: { currentPage }, handleNavigation } = useScrollContext();
 
   return (
-    <header style={{ zIndex: '100' }}>
+    <header>
       <nav>
         <ul className="list">
-          <animated.div style={props} className="active-bg" />
-          <animated.hr style={props} />
+          <div className="active-bg" />
+          <hr />
           <li id="h" className={currentPage === 0 ? 'active' : ''}>
             <button onClick={() => handleNavigation(0)}>Home</button>
           </li>

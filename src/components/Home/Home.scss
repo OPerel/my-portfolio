@@ -1,0 +1,107 @@
+@import '../../styles/global.scss';
+
+.app-home {
+  background-color: $main-background-color;
+
+  .home-container {
+    width: 90%;
+    margin: 0 auto;
+    z-index: 2;
+
+    h1 {
+      margin: 0;
+      font-size: 3rem;
+    }
+
+    h1, h2 {
+      font-weight: 100;
+    }
+
+    p {
+      margin: 0;
+      font-family: 'Share', sans-serif;
+    }
+
+    h1, span.header, span.header-on-hover {
+      color: $secondary-text-color;
+    }
+
+    h2 {
+      min-width: 25em;
+      min-height: 36px;
+      margin: 2% 0;
+    }
+
+    span.header-on-hover{
+      display: inline-flex;
+      justify-content: space-between;
+      width: 5.5em;
+      cursor: text;
+      z-index: 3;
+    }
+    span.header-on-hover:hover span.header {
+      display: none;
+    }
+    span.header-on-hover:hover:before {
+      content: "Philosopher";
+    }
+    span.header-on-hover:hover div.rotating-wrapper {
+      display: inline-block;
+    }
+    span.header-on-hover:hover img.rotating {
+      display: inline-block;
+    }
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+    div.rotating-wrapper {
+      display: none;
+    }
+    img.rotating {
+      display: none;
+      width: 20px;
+      height: 20px;
+      animation: rotate 7s linear 0s infinite;
+      vertical-align: middle;
+    }
+
+    @media only screen and (min-width: $small-bp) {
+      width: 80%;
+    }
+
+    @media only screen and (min-width: $medium-bp) {
+      width: fit-content;
+      width: -moz-fit-content; // Mozilla
+      h1 {
+        font-size: 5rem;
+      }
+      h2 {
+        min-width: fit-content;
+        min-width: -moz-fit-content; // Mozilla
+      }
+    }
+  }
+  img.bg {
+    position: absolute;
+    top: 40vh;
+    left: -15vw;
+    transform: rotate(250deg);
+    opacity: 0.1;
+    height: 60vh;
+
+    @media only screen and (min-width: $small-bp) {
+      top: 10vh;
+      left: 0;
+      height: 90vh;
+      transform: rotate(230deg);
+    }
+  }
+}
+
+
+

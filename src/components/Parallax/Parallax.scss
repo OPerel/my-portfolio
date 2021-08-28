@@ -1,0 +1,30 @@
+@import '../../styles/global.scss';
+
+@keyframes enter {
+  0% {
+    transform: translateY(calc(var(--enterFrom) * 1vh));
+  }
+  100% {
+    transform: translateY(calc(var(--on) * 1vh));
+  }
+}
+
+.enter {
+  transition: $scroll;
+  animation: enter 1s;
+}
+
+.over {
+  transform: translateY(calc(var(--over) * 1vh));
+  transition: $scroll;
+}
+
+.under {
+  transform: translateY(calc(var(--under) * 1vh));
+  transition: $scroll;
+}
+
+.on {
+  transform: translateY(calc(var(--on) * 1vh));
+  transition: $scroll;
+}
