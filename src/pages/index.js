@@ -1,5 +1,4 @@
 import * as React from "react";
-import { IonApp } from "@ionic/react";
 import { useScrollContext } from "../components/ScrollingProvider";
 import Home from "../components/Home/Home";
 import Header from "../components/Header/Header";
@@ -844,32 +843,32 @@ const IndexPage = () => {
   }
 
   return (
-    <IonApp>
+    <div>
       <Header />
       <main>
-        {data && <Home
+        <Home
           animeClass={getAnimeClass(0)}
           name={"Ori Perelman"}
           label={"Web Developer"}
-        />}
+        />
         <About
           animeClass={getAnimeClass(1)}
-          summary={data?.basics.summary || ''}
+          summary={data.basics.summary}
         />
         <Portfolio
           animeClass={getAnimeClass(2)}
-          projects={data?.projects || []}
+          projects={data.projects}
         />
         <Skills
           animeClass={getAnimeClass(3)}
-          skills={data?.skills || ''}
-          work={data?.work || ''}
+          skills={data.skills}
+          work={data.work}
         />
       </main>
       <Footer />
 
-      <arrow-nav currentPage={currentPage} />
-    </IonApp>
+      {/*<arrow-nav currentPage={currentPage} />*/}
+    </div>
   )
 }
 

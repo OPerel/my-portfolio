@@ -1,6 +1,7 @@
 import React from "react";
 import './About.scss';
 import Parallax from "../Parallax/Parallax"
+import RotatingTri from "../RotatingTri/RotatingTri"
 
 const About = ({ animeClass, summary}) => {
   return (
@@ -20,8 +21,16 @@ const About = ({ animeClass, summary}) => {
         <p dangerouslySetInnerHTML={{ __html: summary.replace(/\n/g, "<br/>") }} />
       </div>
 
-      {/*<rotating-tri color="#3e7a7836" side="right" animeClass={animeClass} height={65} origin="bottom left" on={0}*/}
-      {/*              under={20} over={-20} />*/}
+      <RotatingTri
+        color="#3e7a7836"
+        side="right"
+        animeClass={animeClass}
+        height={65}
+        origin="bottom left"
+        on={0}
+        under={20}
+        over={-20}
+      />
     </section>
   )
 }

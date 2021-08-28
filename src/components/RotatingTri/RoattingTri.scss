@@ -1,0 +1,39 @@
+@import '../../styles/global.scss';
+
+.rotating-tri {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  border-style: solid;
+  border-top-width: 0;
+  border-bottom-width: calc(var(--height) * 1vh);
+  border-color: transparent transparent var(--color) transparent;
+
+  transition: $scroll;
+  transform-origin: var(--origin);
+
+  z-index: 0;
+}
+
+
+.tri-on {
+  transform: rotateZ(calc(var(--on) * 2.6deg));
+  transition: $scroll;
+
+  @media only screen and (min-width: $large-bp) {
+    transform: rotateZ(calc(var(--on) * 1.2deg));
+  }
+}
+
+.tri-over {
+  transform: rotateZ(calc(var(--over) * 1.2deg));
+  transition: $scroll;
+}
+
+.tri-under {
+  transform: rotateZ(calc(var(--under) * 1.2deg));
+  transition: $scroll;
+}
