@@ -4,7 +4,7 @@ const Home = ({ name, label }) => {
   return (
     <section className="app-home">
       <div className="home-container">
-        <p>Hello, my name issss</p>
+        <p>Hello, my name is</p>
         {/*<parallax-el animeClass={this.animeClass} on={0} over={-60} under={0} enterFrom={45}>*/}
           <h1>{name}</h1>
         {/*</parallax-el>*/}

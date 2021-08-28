@@ -63,16 +63,6 @@ $large-bp: 1350px;
 
 $scroll: calc(calc(var(--sectionGap) / 1.4) * 1.8s) cubic-bezier(0.65, 0, 0.35, 1); /* easeInOutCubic --- calc(var(--sectionGap) * 1.s) */
 
-@font-face {
-  font-family: 'Share';
-  src: url('../assets/fonts/share.woff2');
-}
-
-@font-face {
-  font-family: 'Londrina Solid';
-  src: url('../assets/fonts/londrina.woff2');
-}
-
 html, body {
   position: fixed;
   margin: 0;

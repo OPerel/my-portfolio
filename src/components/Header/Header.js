@@ -1,35 +1,39 @@
 import React from "react";
-import { useScrollContext } from "../ScrollingProvider"
-// import './Header.scss'; TODO: problem with fonts
+import { animated, config, useSpring } from "react-spring"
+import { useScrollContext } from "../ScrollingProvider";
+import './Header.scss';
 
 const Header = () => {
 
-  const { position: { currentPage }, handleNavigation } = useScrollContext();
+  const { position: { currentPage }, animeProps: { activeNav }, handleNavigation } = useScrollContext();
+  const large = window.matchMedia('(min-width: 480px)')
+  const props = useSpring({
+    to: { x: `${activeNav * (large.matches ? 1 : 2)}vw` },
+    config: config.molasses
+  })
+
   return (
     <header style={{ zIndex: '100' }}>
       <nav>
-        <div className="list">
-          <div className="active-bg" />
-          <hr />
-          <button id="h" className={currentPage === 0 ? 'active' : ''} onClick={() => handleNavigation(0)}>
-            Home
-          </button>
-          <button id="a" className={currentPage === 1 ? 'active' : ''} onClick={() => {
-            console.log('click')
-            handleNavigation(1)
-          }}>
-            About
-          </button>
-          <button id="p" className={currentPage === 2 ? 'active' : ''} onClick={() => handleNavigation(2)}>
-            Portfolio
-          </button>
-          <button id="s" className={currentPage === 3 ? 'active' : ''} onClick={() => handleNavigation(3)}>
-            Skills
-          </button>
-          <button id="c" className={currentPage === 4 ? 'active' : ''} onClick={() => handleNavigation(4)}>
-            Contact
-          </button>
-        </div>
+        <ul className="list">
+          <animated.div style={props} className="active-bg" />
+          <animated.hr style={props} />
+          <li id="h" className={currentPage === 0 ? 'active' : ''}>
+            <button onClick={() => handleNavigation(0)}>Home</button>
+          </li>
+          <li id="a" className={currentPage === 1 ? 'active' : ''}>
+            <button onClick={() => handleNavigation(1)}>About</button>
+          </li>
+          <li id="p" className={currentPage === 2 ? 'active' : ''}>
+            <button onClick={() => handleNavigation(2)}>Portfolio</button>
+          </li>
+          <li id="s" className={currentPage === 3 ? 'active' : ''}>
+            <button onClick={() => handleNavigation(3)}>Skills</button>
+          </li>
+          <li id="c" className={currentPage === 4 ? 'active' : ''}>
+            <button onClick={() => handleNavigation(4)}>Contact</button>
+          </li>
+        </ul>
       </nav>
     </header>
   )
