@@ -1,10 +1,12 @@
-import React from "react";
-import { useScrollContext } from "../ScrollingProvider";
+import React from 'react';
+import { useScrollContext } from '../ScrollingProvider';
 import './Header.scss';
 
 const Header = () => {
-
-  const { position: { currentPage }, handleNavigation } = useScrollContext();
+  const {
+    position: { currentPage },
+    handleNavigation,
+  } = useScrollContext();
 
   return (
     <header>
@@ -30,7 +32,7 @@ const Header = () => {
         </ul>
       </nav>
     </header>
-  )
-}
+  );
+};
 
-export default Header
+export default Header;

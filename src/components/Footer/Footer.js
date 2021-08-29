@@ -1,46 +1,45 @@
-import React, { useReducer } from "react"
+import React, { useReducer } from 'react';
 
 const initialFormState = {
   name: {
     value: '',
     isValid: false,
-    touched: false
+    touched: false,
   },
   email: {
     value: '',
     isValid: false,
-    touched: false
+    touched: false,
   },
   message: {
     value: '',
     isValid: false,
-    touched: false
+    touched: false,
   },
   formIsValid: false,
   submitted: false,
-  error: null
-}
+  error: null,
+};
 
-const reducer = () => {}
+const reducer = () => {};
 
 const Footer = () => {
-
   const [formControls, dispatch] = useReducer(reducer, initialFormState);
 
   const handleInputChange = e => {
-  //   const { name, value } = e;
-  //   formControls = {
-  //     ...formControls,
-  //     [name]: {
-  //       ...formControls[name],
-  //       value,
-  //       isValid: doValidation(name, value),
-  //       touched: true
-  //     }
-  //   };
-  //
-  //   checkFormIsValid();
-  }
+    //   const { name, value } = e;
+    //   formControls = {
+    //     ...formControls,
+    //     [name]: {
+    //       ...formControls[name],
+    //       value,
+    //       isValid: doValidation(name, value),
+    //       touched: true
+    //     }
+    //   };
+    //
+    //   checkFormIsValid();
+  };
   //
   // const checkFormIsValid = () => {
   //   const { name, email, message } = formControls;
@@ -51,41 +50,40 @@ const Footer = () => {
   // }
   //
   const handleSubmitForm = async e => {
-  //   e.preventDefault();
-  //   const { name, email, message } = formControls;
-  //   console.log('submit form: ', name, email, message);
-  //
-  //   try {
-  //     const res = await fetch("/", {
-  //       method: "POST",
-  //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
-  //       body: encode({
-  //         "form-name": 'contact',
-  //         name: name.value,
-  //         email: email.value,
-  //         message: message.value
-  //       })
-  //     });
-  //     // const json = await res.json();
-  //     console.log('res: ', res);
-  //     formControls = {
-  //       ...initialFormState,
-  //       submitted: true
-  //     };
-  //   } catch (err) {
-  //     console.log('error sending form: ', err);
-  //     formControls = {
-  //       ...formControls,
-  //       error: err
-  //     };
-  //   }
-  }
+    //   e.preventDefault();
+    //   const { name, email, message } = formControls;
+    //   console.log('submit form: ', name, email, message);
+    //
+    //   try {
+    //     const res = await fetch("/", {
+    //       method: "POST",
+    //       headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    //       body: encode({
+    //         "form-name": 'contact',
+    //         name: name.value,
+    //         email: email.value,
+    //         message: message.value
+    //       })
+    //     });
+    //     // const json = await res.json();
+    //     console.log('res: ', res);
+    //     formControls = {
+    //       ...initialFormState,
+    //       submitted: true
+    //     };
+    //   } catch (err) {
+    //     console.log('error sending form: ', err);
+    //     formControls = {
+    //       ...formControls,
+    //       error: err
+    //     };
+    //   }
+  };
 
   const { name, email, message } = formControls;
   return (
     <footer>
       <div className="container contact">
-
         <div className="left-top">
           <div>
             <h2>Get In Touch</h2>
@@ -129,7 +127,7 @@ const Footer = () => {
               name="name"
               value={name.value}
               onInput={e => {
-                handleInputChange(e)
+                handleInputChange(e);
               }}
             />
           </ion-item>
@@ -142,7 +140,7 @@ const Footer = () => {
               name="email"
               value={email.value}
               onInput={e => {
-                handleInputChange(e)
+                handleInputChange(e);
               }}
             />
           </ion-item>
@@ -155,7 +153,7 @@ const Footer = () => {
               enterkeyhint="done"
               value={message.value}
               onInput={e => {
-                handleInputChange(e)
+                handleInputChange(e);
               }}
             />
           </ion-item>
@@ -168,11 +166,15 @@ const Footer = () => {
           {formControls.submitted && <span>Thank you!</span>}
           {formControls.error && <span>Not sent!</span>}
         </form>
-
       </div>
-      <p className="credit"><a href="#">Designed and developed by Ori Perelman &copy; {new Date().getFullYear()}</a></p>
+      <p className="credit">
+        <a href="#">
+          Designed and developed by Ori Perelman &copy;{' '}
+          {new Date().getFullYear()}
+        </a>
+      </p>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;

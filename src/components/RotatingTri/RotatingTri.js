@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from "react"
+import React, { useLayoutEffect, useRef } from 'react';
 import './RoattingTri.scss';
-import { useTheme } from "css-vars-hook"
+import { useTheme } from 'css-vars-hook';
 
 const RotatingTri = ({
   animeClass,
@@ -12,17 +12,18 @@ const RotatingTri = ({
   height,
   color,
 }) => {
-
   const { setRef, setVariable, style } = useTheme({
     on,
     over,
     under,
     origin,
     height,
-    color
+    color,
   });
-  const borderStyles = side === 'left' ?
-    { borderRightWidth: '110vw', borderLeftWidth: '0' } : { borderLeftWidth: '110vw', borderRightWidth: '0' };
+  const borderStyles =
+    side === 'left'
+      ? { borderRightWidth: '110vw', borderLeftWidth: '0' }
+      : { borderLeftWidth: '110vw', borderRightWidth: '0' };
 
   useLayoutEffect(() => {
     setVariable('on', on);
@@ -31,13 +32,13 @@ const RotatingTri = ({
     setVariable('height', height);
     setVariable('origin', origin);
     setVariable('color', color);
-  }, [color, height, on, origin, over, under])
+  }, [color, height, on, origin, over, under]);
 
   return (
     <div ref={setRef} style={style}>
       <div className={`rotating-tri tri-${animeClass}`} style={borderStyles} />;
     </div>
-  )
-}
+  );
+};
 
-export default RotatingTri
+export default RotatingTri;

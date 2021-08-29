@@ -1,12 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 
 const WorkTabs = ({ work }) => {
-
   const [activeTab, setActiveTab] = useState(0);
 
-  const handleTabClick = (idx) => {
+  const handleTabClick = idx => {
     setActiveTab(idx);
-  }
+  };
 
   const workPlaceData = work[activeTab];
 
@@ -19,19 +18,25 @@ const WorkTabs = ({ work }) => {
               key={w.company}
               className={activeTab === idx ? 'active' : ''}
               onClick={() => handleTabClick(idx)}
-            >{w.company}</li>
+            >
+              {w.company}
+            </li>
           ))}
         </ul>
       </nav>
       <div className="info">
         <p>
-          <span><b>{workPlaceData.position}</b> @ </span>
+          <span>
+            <b>{workPlaceData.position}</b> @{' '}
+          </span>
           {workPlaceData.website ? (
             <a
               href={workPlaceData.website}
               target="_blank"
               rel="noreferrer noopener"
-            >{workPlaceData.company}</a>
+            >
+              {workPlaceData.company}
+            </a>
           ) : (
             <span>{workPlaceData.company}</span>
           )}
@@ -39,14 +44,12 @@ const WorkTabs = ({ work }) => {
         <p>{workPlaceData.summary}</p>
         <ul>
           {workPlaceData.highlights.map((bullet, idx) => (
-            <li key={`${idx}-${bullet.split(' ')[0]}`}>
-              {bullet}
-            </li>
+            <li key={`${idx}-${bullet.split(' ')[0]}`}>{bullet}</li>
           ))}
         </ul>
       </div>
     </div>
   );
-}
+};
 
-export default WorkTabs
+export default WorkTabs;

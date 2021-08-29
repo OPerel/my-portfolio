@@ -1,29 +1,33 @@
-import React, { useState, useLayoutEffect, createContext, useContext } from "react";
+import React, {
+  useState,
+  useLayoutEffect,
+  createContext,
+  useContext,
+} from 'react';
 
 const initialPosition = {
   currentPage: 0,
-  prevPage: 0
-}
+  prevPage: 0,
+};
 
 const ScrollContext = createContext({
   position: initialPosition,
-  handleNavigation: () => {}
+  handleNavigation: () => {},
 });
 export const useScrollContext = () => useContext(ScrollContext);
 
 const ScrollingProvider = ({ children }) => {
-
   const [position, setPosition] = useState(initialPosition);
 
-  const handleNavigation = (to) => {
+  const handleNavigation = to => {
     setPosition(prev => ({ currentPage: to, prevPage: prev.currentPage }));
-  }
+  };
 
   const doc = document.documentElement;
 
   useLayoutEffect(() => {
     const { currentPage, prevPage } = position;
-    const scrollPos = currentPage === 4 ? -395 : (currentPage) * -100;
+    const scrollPos = currentPage === 4 ? -395 : currentPage * -100;
     const activeNav = currentPage * 8;
     const sectionGap = Math.abs(prevPage - currentPage);
     doc.style.setProperty('--scrollPos', `${scrollPos}`);
@@ -35,7 +39,7 @@ const ScrollingProvider = ({ children }) => {
     <ScrollContext.Provider value={{ position, handleNavigation }}>
       {children}
     </ScrollContext.Provider>
-  )
-}
+  );
+};
 
 export default ScrollingProvider;
