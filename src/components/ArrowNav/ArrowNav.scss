@@ -1,0 +1,54 @@
+@import '../../styles/global.scss';
+
+$hide: opacity 1s;
+
+.arrow-nav {
+  @media only screen and (max-width: $medium-bp) {
+    display: none;
+  }
+
+  position: fixed;
+  bottom: 0;
+  right: 2.5vw;
+  height: calc(100vh - 45px);
+  background-color: transparent;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+
+  z-index: 1;
+
+  &:hover {
+    ion-icon {
+      opacity: 0.6;
+    }
+  }
+
+  ion-button {
+    margin: 2.5rem 0;
+    --background: transparent;
+    --background-hover: #FFFFFF82;
+    --box-shadow: none;
+
+    &:hover {
+      ion-icon {
+        opacity: 0.9;
+      }
+    }
+  }
+
+  ion-icon {
+    margin: 2.5rem 0;
+    font-size: 4rem;
+    opacity: 0.1;
+    transition: 0.4s;
+  }
+
+  .hide {
+    opacity: 0 !important;
+    transition: $hide;
+    pointer-events: none !important;
+  }
+}

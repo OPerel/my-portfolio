@@ -6,6 +6,7 @@ import About from '../components/About/About';
 import Portfolio from '../components/Portfolio/Portfolio';
 import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
+import ArrowNav from '../components/ArrowNav/ArrowNav';
 
 const IndexPage = ({ pageContext }) => {
   const {
@@ -39,7 +40,7 @@ const IndexPage = ({ pageContext }) => {
       </main>
       <Footer />
 
-      {/*<arrow-nav currentPage={currentPage} />*/}
+      <ArrowNav />
     </div>
   );
 };
