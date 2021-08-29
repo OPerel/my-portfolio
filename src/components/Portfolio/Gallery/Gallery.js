@@ -1,4 +1,4 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import { IonButton, IonIcon, IonSlide, IonSlides } from '@ionic/react';
 import Card from './Card/Card';
 import { chevronBack, chevronForward } from 'ionicons/icons';
@@ -14,6 +14,7 @@ const Gallery = ({ projects }) => {
   useLayoutEffect(() => {
     const projectsToDisplay = displayAll ? projects : filteredProjects;
     setDisplayProjects(projectsToDisplay);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [displayAll]);
 
   const sliderOptions = {

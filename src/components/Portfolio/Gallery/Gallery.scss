@@ -57,8 +57,8 @@ ion-slides {
 
   .gallery-btn.hide {
     visibility: hidden;
-    transform: translateY(100px);
-    transition: .5s;
+    transform: translateY(150px);
+    transition: .7s;
   }
 
   @media only screen and (min-width: $small-bp) {

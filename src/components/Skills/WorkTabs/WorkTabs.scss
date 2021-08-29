@@ -2,7 +2,7 @@
 
 .work-tabs-wrapper {
   display: grid;
-  margin-top: 2%;
+  margin-top: 4%;
 
   @media only screen and (min-width: $small-bp) {
     height: 100%;
@@ -12,7 +12,7 @@
 }
 
 div.work-tabs-nav {
-  ul {
+  .work-tabs-buttons {
     position: relative;
     list-style: none;
     margin-bottom: 0;
@@ -20,17 +20,25 @@ div.work-tabs-nav {
     display: flex;
     font-size: 1.2rem;
 
-    li {
-      padding: 2% 4%;
+    button {
+      padding: 2% 5% 2% 2%;
       border-bottom: 0.5px solid #{$main-text-color}43;
+      background-color: transparent;
+      color: #{$main-text-color};
+      border-top: none;
+      border-right: none;
+      border-left: none;
+      text-align: start;
+      font-size: 0.9em;
+      font-family: 'Londrina Solid', sans-serif;
     }
 
-    li:hover {
+    button:hover {
       cursor: pointer;
       background-color: rgba(30, 32, 35, 0.36);
     }
 
-    li.active {
+    button.active {
       pointer-events: none;
       color: #{$secondary-text-color};
       background-color: rgba(30, 32, 35, 0.36);
@@ -38,16 +46,18 @@ div.work-tabs-nav {
     }
 
     @media only screen and (min-width: $small-bp) {
-      display: block;
+      flex-direction: column;
 
-      li {
-        padding: 4% 3%;
+      button {
+        padding: 4% 6%;
         margin-right: 10%;
         border-left: 0.5px solid #{$main-text-color}43;
         border-bottom: none;
+        border-top: none;
+        border-right: none;
       }
 
-      li.active {
+      button.active {
         border-left: 0.5px solid;
         border-bottom: none;
       }
@@ -56,6 +66,10 @@ div.work-tabs-nav {
 }
 
 .info {
+  p.work-title {
+    margin-top: 0;
+  }
+
   ul {
     padding-inline-start: 3%;
 

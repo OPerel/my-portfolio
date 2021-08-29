@@ -36,7 +36,7 @@ const RotatingTri = ({
 
   return (
     <div ref={setRef} style={style}>
-      <div className={`rotating-tri tri-${animeClass}`} style={borderStyles} />;
+      <div className={`rotating-tri tri-${animeClass}`} style={borderStyles} />
     </div>
   );
 };

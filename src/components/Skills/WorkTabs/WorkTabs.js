@@ -13,20 +13,20 @@ const WorkTabs = ({ work }) => {
   return (
     <div className="work-tabs-wrapper">
       <div className="work-tabs-nav">
-        <ul>
+        <div className="work-tabs-buttons">
           {work.map((w, idx) => (
-            <li
+            <button
               key={w.company}
               className={activeTab === idx ? 'active' : ''}
               onClick={() => handleTabClick(idx)}
             >
               {w.company}
-            </li>
+            </button>
           ))}
-        </ul>
+        </div>
       </div>
       <div className="info">
-        <p>
+        <p className="work-title">
           <span>
             <b>{workPlaceData.position}</b> @{' '}
           </span>

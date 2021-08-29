@@ -129,11 +129,12 @@ section {
 
 .container {
   width: 90%;
-  margin: 0 auto;
+  margin: 10% auto 0;
 
   z-index: 2;
 
   @media only screen and (min-width: $small-bp) {
+    margin: 0 auto;
     width: 80%;
   }
 

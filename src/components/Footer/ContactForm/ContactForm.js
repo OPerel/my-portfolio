@@ -64,6 +64,9 @@ const reducer = (state, action) => {
         error: action.payload,
       };
     }
+    default: {
+      return state;
+    }
   }
 };
 
@@ -98,7 +101,6 @@ const ContactForm = () => {
           message: message.value,
         }),
       });
-      // const json = await res.json();
       console.log('res: ', res);
       dispatch({ type: 'submitted', payload: initialFormState });
     } catch (err) {
@@ -108,7 +110,6 @@ const ContactForm = () => {
   };
 
   const { name, email, message } = formControls;
-  console.log('formControls: ', formControls);
   return (
     <form name="contact" data-netlify="true">
       <input type="hidden" name="form-name" value="contact" />
@@ -153,6 +154,7 @@ const ContactForm = () => {
       >
         Submit
       </IonButton>
+      {/* TODO: style submit messages */}
       {formControls.submitted && <span>Thank you!</span>}
       {formControls.error && <span>Not sent!</span>}
     </form>
