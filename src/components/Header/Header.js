@@ -10,7 +10,7 @@ const Header = () => {
 
   return (
     <header>
-      <nav>
+      <nav className="main-nav">
         <ul className="list">
           <div className="active-bg" />
           <hr />

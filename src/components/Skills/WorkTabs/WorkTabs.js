@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './WorkTabs.scss';
 
 const WorkTabs = ({ work }) => {
   const [activeTab, setActiveTab] = useState(0);
@@ -10,8 +11,8 @@ const WorkTabs = ({ work }) => {
   const workPlaceData = work[activeTab];
 
   return (
-    <div>
-      <nav>
+    <div className="work-tabs-wrapper">
+      <div className="work-tabs-nav">
         <ul>
           {work.map((w, idx) => (
             <li
@@ -23,7 +24,7 @@ const WorkTabs = ({ work }) => {
             </li>
           ))}
         </ul>
-      </nav>
+      </div>
       <div className="info">
         <p>
           <span>

@@ -1,0 +1,59 @@
+@import '../../styles/global.scss';
+
+.skills-wrapper {
+  position: relative;
+  height: 120vh;
+  overflow: hidden;
+}
+
+.app-skills {
+  height: 100vh;
+  background-color: $skills-background-color;
+  overflow: visible;
+}
+
+.skills-container {
+  height: 85vh;
+  @media only screen and (min-width: $small-bp) {
+    height: 55vh;
+  }
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  font-size: 1.1rem;
+
+  .skills-item {
+    width: 20vw;
+    margin: 0.5% 0;
+    font-family: 'Share', sans-serif;
+
+    .level {
+      margin-top: 2%;
+      height: 2px;
+      background-color: #{$secondary-text-color};
+      transition: width 1s calc(var(--sectionGap) * 0.8s);
+    }
+
+    @media only screen and (min-width: $small-bp) {
+      width: 8vw;
+    }
+  }
+}
+
+.end-tri {
+  position: absolute;
+  top: 100vh;
+  border-style: solid;
+  border-top-width: 20vh;
+  border-right-width: 110vw;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-color: #0D5452 transparent transparent transparent;
+  z-index: -1;
+}
+
+.keyboard-skills {
+  padding-bottom: 100vh;
+}

@@ -1,0 +1,77 @@
+@import '../../../styles/global.scss';
+
+.work-tabs-wrapper {
+  display: grid;
+  margin-top: 2%;
+
+  @media only screen and (min-width: $small-bp) {
+    height: 100%;
+    width: 100%;
+    grid-template-columns: 1fr 4fr;
+  }
+}
+
+div.work-tabs-nav {
+  ul {
+    position: relative;
+    list-style: none;
+    margin-bottom: 0;
+    padding: 0;
+    display: flex;
+    font-size: 1.2rem;
+
+    li {
+      padding: 2% 4%;
+      border-bottom: 0.5px solid #{$main-text-color}43;
+    }
+
+    li:hover {
+      cursor: pointer;
+      background-color: rgba(30, 32, 35, 0.36);
+    }
+
+    li.active {
+      pointer-events: none;
+      color: #{$secondary-text-color};
+      background-color: rgba(30, 32, 35, 0.36);
+      border-bottom: 0.5px solid;
+    }
+
+    @media only screen and (min-width: $small-bp) {
+      display: block;
+
+      li {
+        padding: 4% 3%;
+        margin-right: 10%;
+        border-left: 0.5px solid #{$main-text-color}43;
+        border-bottom: none;
+      }
+
+      li.active {
+        border-left: 0.5px solid;
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.info {
+  ul {
+    padding-inline-start: 3%;
+
+    li {
+      padding: 0 0 2% 1%;
+      font-size: 1.1rem;
+
+      &::marker {
+        //content: '\2727';//'\2713';
+        //margin-right: 1em;
+        color: #{$secondary-text-color};
+      }
+
+      @media only screen and (min-width: $small-bp) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
