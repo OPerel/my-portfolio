@@ -1,25 +1,19 @@
 import React, { useState, useLayoutEffect, createContext, useContext } from "react";
 
-const initPosition = {
+const initialPosition = {
   currentPage: 0,
   prevPage: 0
 }
-const initAnimeProps = {
-  scrollPos: 0,
-  activeNav: 0,
-  sectionGap: 0
-}
 
 const ScrollContext = createContext({
-  position: initPosition,
-  animeProps: initAnimeProps,
+  position: initialPosition,
   handleNavigation: () => {}
 });
 export const useScrollContext = () => useContext(ScrollContext);
 
 const ScrollingProvider = ({ children }) => {
 
-  const [position, setPosition] = useState({ currentPage: 0, prevPage: 0 });
+  const [position, setPosition] = useState(initialPosition);
 
   const handleNavigation = (to) => {
     setPosition(prev => ({ currentPage: to, prevPage: prev.currentPage }));

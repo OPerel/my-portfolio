@@ -1,4 +1,5 @@
-import React, { useLayoutEffect, useRef } from "react"
+import React, { useLayoutEffect, useRef } from "react";
+import { useTheme } from "css-vars-hook";
 import './Parallax.scss';
 
 const Parallax = ({
@@ -8,23 +9,22 @@ const Parallax = ({
   enterFrom
 }) => {
 
-  const ref = useRef(null);
   const { on, over, under } = positions;
+  const {setRef, setVariable, style} = useTheme({
+    enterFrom,
+    on,
+    over,
+    under
+  });
   useLayoutEffect(() => {
-    const element = ref.current;
-    element.style.setProperty('--on', `${on}`);
-    element.style.setProperty('--over', `${over}`);
-    element.style.setProperty('--under', `${under}`);
-    element.style.setProperty('--enterFrom', `${enterFrom}`);
+    setVariable('on', on);
+    setVariable('over', over);
+    setVariable('under', under);
+    setVariable('enterFrom', enterFrom);
   }, [enterFrom, on, over, under]);
 
   return (
-    <div ref={ref} className={`${animeClass} enter`} style={{
-      '--on': on,
-      '--over': over,
-      '--under': under,
-      '--enterFrom': enterFrom
-    }}>
+    <div ref={setRef} className={`${animeClass} enter`} style={style}>
       {children}
     </div>
   )

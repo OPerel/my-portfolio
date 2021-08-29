@@ -1,5 +1,6 @@
 import React, { useLayoutEffect, useRef } from "react"
 import './RoattingTri.scss';
+import { useTheme } from "css-vars-hook"
 
 const RotatingTri = ({
   animeClass,
@@ -11,21 +12,29 @@ const RotatingTri = ({
   height,
   color,
 }) => {
+
+  const { setRef, setVariable, style } = useTheme({
+    on,
+    over,
+    under,
+    origin,
+    height,
+    color
+  });
   const borderStyles = side === 'left' ?
     { borderRightWidth: '110vw', borderLeftWidth: '0' } : { borderLeftWidth: '110vw', borderRightWidth: '0' };
 
-  const ref = useRef(null)
   useLayoutEffect(() => {
-    ref.current.style.setProperty('--on', `${on}`);
-    ref.current.style.setProperty('--over', `${over}`);
-    ref.current.style.setProperty('--under', `${under}`);
-    ref.current.style.setProperty('--height', `${height}`);
-    ref.current.style.setProperty('--origin', `${origin}`);
-    ref.current.style.setProperty('--color', `${color}`);
+    setVariable('on', on);
+    setVariable('over', over);
+    setVariable('under', under);
+    setVariable('height', height);
+    setVariable('origin', origin);
+    setVariable('color', color);
   }, [color, height, on, origin, over, under])
 
   return (
-    <div ref={ref}>
+    <div ref={setRef} style={style}>
       <div className={`rotating-tri tri-${animeClass}`} style={borderStyles} />;
     </div>
   )
