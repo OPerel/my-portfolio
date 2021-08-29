@@ -1,7 +1,14 @@
-/**
- * Implement Gatsby's Node APIs in this file.
- *
- * See: https://www.gatsbyjs.com/docs/node-apis/
- */
+const axios = require('axios');
 
-// You can delete this file if you're not using it
+exports.onCreatePage = async ({ page }) => {
+  if (page.path === '/') {
+    try {
+      const data = await axios.get(
+        'https://gitconnected.com/v1/portfolio/operel'
+      );
+      page.context = { data: data.data };
+    } catch (err) {
+      console.warn('Error fetching: ', err);
+    }
+  }
+};
