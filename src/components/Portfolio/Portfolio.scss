@@ -1,0 +1,10 @@
+@import '../../styles/global.scss';
+
+.app-portfolio {
+  background-color: $portfolio-background-color;
+  h2 { margin-top: -10%; }
+  @media only screen and (min-width: $small-bp){
+    h2 { margin-top: 0.5em; }
+  }
+}
+

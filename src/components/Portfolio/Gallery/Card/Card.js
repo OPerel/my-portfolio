@@ -1,55 +1,70 @@
 import React from 'react';
+import './Card.scss';
+import {
+  IonButton,
+  IonCard,
+  IonCardContent,
+  IonCardHeader,
+  IonCardSubtitle,
+  IonCardTitle,
+  IonIcon,
+  IonRippleEffect,
+} from '@ionic/react';
+import { logoGithub, globeOutline } from 'ionicons/icons';
 
 const Card = ({ project }) => {
-  const { images, libraries, languages, roles } = this.project;
+  const { images, libraries, languages, roles } = project;
   const { url } = images[0]?.resolutions.desktop || '';
   return project ? (
-    //<Host>
-    <ion-card>
-      <div class="img-wrapper" style={{ backgroundImage: `url('${url}')` }} />
-      <ion-card-header>
-        <ion-card-title>{project.displayName}</ion-card-title>
-        <ion-card-subtitle>{project.summary}</ion-card-subtitle>
-      </ion-card-header>
+    <div className="card-wrapper">
+      <IonCard>
+        <div
+          className="img-wrapper"
+          style={{ backgroundImage: `url('${url}')` }}
+        />
+        <IonCardHeader>
+          <IonCardTitle>{project.displayName}</IonCardTitle>
+          <IonCardSubtitle>{project.summary}</IonCardSubtitle>
+        </IonCardHeader>
 
-      {roles.length > 0 && <p class="role">{roles}</p>}
+        {roles.length > 0 && <p className="role">{roles}</p>}
 
-      <ion-card-content style={{ fontSize: '1.3em' }}>
-        <div class="project-description">{project.description}</div>
-        <ul>
-          {libraries.concat(languages).map(t => (
-            <li>{t}</li>
-          ))}
-        </ul>
-      </ion-card-content>
+        <IonCardContent style={{ fontSize: '1.3em' }}>
+          <div className="project-description">{project.description}</div>
+          <ul>
+            {libraries.concat(languages).map(t => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </IonCardContent>
 
-      <div class="card-buttons">
-        <ion-button
-          fill="clear"
-          href={project.url}
-          target="__blank"
-          rel="noopener noreferrer"
-          disabled={!project.url}
-        >
-          <ion-ripple-effect />
-          <ion-icon slot="start" name="globe-outline" />
-          Live
-        </ion-button>
-        <ion-button
-          fill="clear"
-          href={project.githubUrl}
-          target="__blank"
-          rel="noopener noreferrer"
-          disabled={!project.githubUrl}
-        >
-          <ion-ripple-effect />
-          <ion-icon slot="start" name="logo-github" />
-          Source
-        </ion-button>
-      </div>
-    </ion-card>
-  ) : //</Host>
-  null;
+        <div className="card-buttons">
+          <IonButton
+            fill="clear"
+            href={project.url}
+            target="__blank"
+            rel="noopener noreferrer"
+            disabled={!project.url}
+          >
+            <IonRippleEffect />
+            <IonIcon slot="start" icon={globeOutline} />
+            Live
+          </IonButton>
+          <IonButton
+            fill="clear"
+            href={project.githubUrl}
+            target="__blank"
+            rel="noopener noreferrer"
+            disabled={!project.githubUrl}
+          >
+            <IonRippleEffect />
+            <IonIcon slot="start" icon={logoGithub} />
+            Source
+          </IonButton>
+        </div>
+      </IonCard>
+    </div>
+  ) : null;
 };
 
 export default Card;

@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect } from 'react';
 import './RoattingTri.scss';
 import { useTheme } from 'css-vars-hook';
 
@@ -32,7 +32,7 @@ const RotatingTri = ({
     setVariable('height', height);
     setVariable('origin', origin);
     setVariable('color', color);
-  }, [color, height, on, origin, over, under]);
+  }, [color, height, on, origin, over, under, setVariable]);
 
   return (
     <div ref={setRef} style={style}>

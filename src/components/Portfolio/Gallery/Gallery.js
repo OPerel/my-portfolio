@@ -1,8 +1,20 @@
-import React, { useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { IonButton, IonIcon, IonSlide, IonSlides } from '@ionic/react';
+import Card from './Card/Card';
+import { chevronBack, chevronForward } from 'ionicons/icons';
+import './Gallery.scss';
 
 const Gallery = ({ projects }) => {
   const [displayAll, setDisplayAll] = useState(false);
   const [showBtn, setShowBtn] = useState(false);
+
+  const filteredProjects = projects.filter((_, i) => i < 5);
+  const [displayProjects, setDisplayProjects] = useState(filteredProjects);
+
+  useLayoutEffect(() => {
+    const projectsToDisplay = displayAll ? projects : filteredProjects;
+    setDisplayProjects(projectsToDisplay);
+  }, [displayAll]);
 
   const sliderOptions = {
     mousewheel: true,
@@ -18,37 +30,42 @@ const Gallery = ({ projects }) => {
     },
   };
 
-  const displayProjects = displayAll
-    ? projects
-    : projects.filter((_, i) => i < 5);
-  return projects ? (
-    // <Host>
+  const slidesRef = useRef(null);
+
+  return (
     <div className="gallery-container">
-      <ion-slides
+      <IonSlides
+        // TODO: this is bad.. if issue not resolved will have to switch slider. See https://www.npmjs.com/package/react-id-swiper
+        key={displayProjects.map(p => p.name).join('_')}
         pager={true}
         options={sliderOptions}
-        class={showBtn || displayAll ? 'pagination-start' : 'pagination-center'}
-        ref={el => (this.slides = el)}
+        className={
+          showBtn || displayAll ? 'pagination-start' : 'pagination-center'
+        }
+        ref={slidesRef}
+        onIonSlideDrag={async () => {
+          const end = await slidesRef.current.isEnd();
+          setShowBtn(end);
+        }}
       >
         {displayProjects.map(project => (
-          <ion-slide>
-            <project-card project={project} />
-          </ion-slide>
+          <IonSlide key={project.name}>
+            <Card project={project} />
+          </IonSlide>
         ))}
-      </ion-slides>
-      <ion-button
-        className={showBtn || displayAll ? '' : 'hide'}
+      </IonSlides>
+      <IonButton
+        className={showBtn || displayAll ? 'gallery-btn' : 'gallery-btn hide'}
         onClick={() => setDisplayAll(!displayAll)}
       >
-        <ion-icon
+        <IonIcon
           slot={displayAll ? 'start' : 'end'}
-          name={displayAll ? 'chevron-back' : 'chevron-forward'}
+          icon={displayAll ? chevronBack : chevronForward}
         />
         {displayAll ? 'Hide' : 'See More'}
-      </ion-button>
+      </IonButton>
     </div>
-  ) : //{/*</Host>*/}
-  null;
+  );
 };
 
 export default Gallery;

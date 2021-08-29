@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect } from 'react';
 import { useTheme } from 'css-vars-hook';
 import './Parallax.scss';
 
@@ -15,7 +15,7 @@ const Parallax = ({ children, animeClass, positions, enterFrom }) => {
     setVariable('over', over);
     setVariable('under', under);
     setVariable('enterFrom', enterFrom);
-  }, [enterFrom, on, over, under]);
+  }, [enterFrom, on, over, under, setVariable]);
 
   return (
     <div ref={setRef} className={`${animeClass} enter`} style={style}>

@@ -1,0 +1,70 @@
+@import '../../../styles/global.scss';
+
+ion-slides {
+  height: 75vh;
+  .swiper-pagination-bullet-active {
+    background: #{$secondary-text-color};
+  }
+}
+
+.pagination-center {
+  .swiper-pagination {
+    transition: .5s;
+    transform: translateX(0);
+  }
+}
+
+.pagination-start {
+  .swiper-pagination {
+    transition: .5s;
+    transform: translateX(-27vw);
+  }
+
+  @media only screen and (min-width: $small-bp) {
+    .swiper-pagination {
+      transform: translateX(0);
+    }
+  }
+}
+
+.gallery-container {
+  position: relative;
+  width: 96vw;
+  margin: 0 auto;
+
+  ion-button.gallery-btn {
+    position: absolute;
+    right: 5%;
+    bottom: 0;
+
+    width: 30vw;
+    border: 0.5px solid;
+    font-family: 'Share', sans-serif;
+    font-size: 1rem;
+    --color: #{$secondary-text-color};
+    --background: transparent; // #202e48; // #182d55;
+    --background-hover: #{$secondary-text-color}aa; // #599292;
+    --box-shadow: none;
+    z-index: 2;
+    visibility: visible;
+    transform: translateY(0);
+    transition: .5s;
+
+    @media only screen and (min-width: $small-bp) {
+      width: 10vw;
+    }
+  }
+
+  .gallery-btn.hide {
+    visibility: hidden;
+    transform: translateY(100px);
+    transition: .5s;
+  }
+
+  @media only screen and (min-width: $small-bp) {
+    width: 92vw;
+  }
+}
+
+
+

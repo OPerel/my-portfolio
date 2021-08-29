@@ -1,14 +1,20 @@
 import React from 'react';
+import Gallery from './Gallery/Gallery';
+import Parallax from '../Parallax/Parallax';
+import './Portfolio.scss';
 
-const Portfolio = ({ /*animeClass,*/ projects }) => {
+const Portfolio = ({ animeClass, projects }) => {
   return (
     <section className="app-portfolio">
       <div className="container">
         <h2>My Projects</h2>
       </div>
-      {/*<parallax-el animeClass={animeClass} on={0} over={-50} under={60}>*/}
-      <projects-gallery projects={projects} />
-      {/*</parallax-el>*/}
+      <Parallax
+        animeClass={animeClass}
+        positions={{ on: 0, over: -50, under: 60 }}
+      >
+        <Gallery projects={projects} />
+      </Parallax>
     </section>
   );
 };

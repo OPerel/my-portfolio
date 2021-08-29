@@ -33,7 +33,7 @@ const ScrollingProvider = ({ children }) => {
     doc.style.setProperty('--scrollPos', `${scrollPos}`);
     doc.style.setProperty('--activeNav', `${activeNav}`);
     doc.style.setProperty('--sectionGap', `${sectionGap}`);
-  }, [position]);
+  }, [position, doc.style]);
 
   return (
     <ScrollContext.Provider value={{ position, handleNavigation }}>
