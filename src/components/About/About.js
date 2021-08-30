@@ -15,13 +15,18 @@ const About = ({ animeClass, summary }) => {
         </Parallax>
 
         <div className="img-wrapper">
-          <Parallax
-            animeClass={animeClass}
-            positions={{ on: 0, under: -50, over: 80 }}
-          >
-            <div className="right-line" />
-          </Parallax>
-          <div className="bottom-line" />
+          <div
+            className="right-line"
+            style={{
+              height: animeClass === 'on' ? `99%` : '0',
+            }}
+          />
+          <div
+            className="bottom-line"
+            style={{
+              width: animeClass === 'on' ? `99%` : '0',
+            }}
+          />
           <div className="my-image" />
         </div>
         <p

@@ -43,7 +43,8 @@
   div.right-line {
     right: -10px;
     width: 2px;
-    height: 200px;
+    //height: 200px;
+    transition: height 1s calc(var(--sectionGap) * 0.8s);
     background-color: #{$secondary-text-color};
 
     @media only screen and (min-width: $small-bp) {
@@ -53,9 +54,10 @@
 
   div.bottom-line {
     bottom: -10px;
-    width: 95%;
+    //width: 95%;
     height: 2px;
     margin: 2% 0 0 0;
     background-color: #{$secondary-text-color};
+    transition: width 1s calc(var(--sectionGap) * 0.8s);
   }
 }

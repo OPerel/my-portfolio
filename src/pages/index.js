@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
@@ -7,7 +7,6 @@ import Portfolio from '../components/Portfolio/Portfolio';
 import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
-import { useEffect } from 'react';
 
 /**
  * TODO:
