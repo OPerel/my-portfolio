@@ -2,18 +2,18 @@ import React, { useEffect } from 'react';
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
-// import About from '../components/About/About';
-// import Portfolio from '../components/Portfolio/Portfolio';
-// import Skills from '../components/Skills/Skills';
-// import Footer from '../components/Footer/Footer';
+import About from '../components/About/About';
+import Portfolio from '../components/Portfolio/Portfolio';
+import Skills from '../components/Skills/Skills';
+import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
 import Seo from '../components/seo';
 
-import loadable from '@loadable/component';
-const About = loadable(() => import('../components/About/About'));
-const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'));
-const Skills = loadable(() => import('../components/Skills/Skills'));
-const Footer = loadable(() => import('../components/Footer/Footer'));
+// import loadable from '@loadable/component';
+// const About = loadable(() => import('../components/About/About'));
+// const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'));
+// const Skills = loadable(() => import('../components/Skills/Skills'));
+// const Footer = loadable(() => import('../components/Footer/Footer'));
 /**
  * TODO:
  * 2. Fix dynamic slides number
