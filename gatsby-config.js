@@ -1,9 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: `Ori Perelman - Web Developer`,
-    description: `Self taught web developer located in Tel Aviv, Israel`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    description: `Self taught, full stack web developer located in Tel-Aviv, Israel`,
+    author: `Ori Perelman`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

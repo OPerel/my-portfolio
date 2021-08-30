@@ -7,6 +7,7 @@ import Portfolio from '../components/Portfolio/Portfolio';
 import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
+import Seo from '../components/seo';
 
 /**
  * TODO:
@@ -79,6 +80,7 @@ const IndexPage = ({ pageContext }) => {
   } = pageContext.data;
   return (
     <div>
+      <Seo />
       <Header />
       <main>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
