@@ -50,26 +50,26 @@ const IndexPage = ({ pageContext }) => {
 
   useEffect(() => {
     // disable animation on mobile keyboard open
-    let timer;
-    window.addEventListener('resize', e => {
-      if (currentPage === 4) {
-        console.log('resize e: ', e);
-        this.root.querySelector('main').classList.add('keyboard-open');
-        this.root.querySelector('footer').classList.toggle('keyboard-footer');
-        this.root
-          .querySelector('.skills-container')
-          .classList.toggle('keyboard-skills');
+    if (currentPage === 4) {
+      let timer;
+      const docEl = document.documentElement;
+      const main = docEl.querySelector('main');
+      const footer = docEl.querySelector('footer');
+      const skills = docEl.querySelector('.skills-container');
+      window.addEventListener('resize', e => {
+        main.classList.add('keyboard-open');
+        footer.classList.toggle('keyboard-footer');
+        skills.classList.toggle('keyboard-skills');
         if (timer) {
           clearTimeout(timer);
         }
         timer = setTimeout(() => {
-          console.log('**** timeout ****');
-          this.root.querySelector('main').classList.remove('keyboard-open');
+          main.classList.remove('keyboard-open');
         }, 300);
-      }
-    });
+      });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [currentPage]);
 
   const {
     basics: { name, label, summary },

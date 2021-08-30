@@ -133,7 +133,7 @@ footer {
 
   p.credit {
     position: absolute;
-    bottom: 8vh;
+    bottom: 3vh;
     width: 100vw;
     margin: 0;
     padding: 1.8% 0;
@@ -166,9 +166,9 @@ input:-webkit-autofill:active {
 }
 
 .keyboard-footer {
-  padding-bottom: 15vh;
+  padding-bottom: 8vh;
 
   p.credit {
-    bottom: 0;
+    display: none;
   }
 }
