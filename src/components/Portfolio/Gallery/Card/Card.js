@@ -14,7 +14,7 @@ import { logoGithub, globeOutline } from 'ionicons/icons';
 
 const Card = ({ project }) => {
   const { images, libraries, languages, roles } = project;
-  const { url } = images[0]?.resolutions.desktop || '';
+  const { url } = images[0]?.resolutions.mobile || '';
   return project ? (
     <div className="card-wrapper">
       <IonCard>

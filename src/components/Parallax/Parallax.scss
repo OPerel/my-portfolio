@@ -12,6 +12,7 @@
 .enter {
   transition: $scroll;
   animation: enter 1s;
+  animation-delay: .2s;
 }
 
 .over {

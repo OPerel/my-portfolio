@@ -111,7 +111,7 @@ const ContactForm = () => {
 
   const { name, email, message } = formControls;
   return (
-    <form name="contact" data-netlify="true">
+    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
       <input type="hidden" name="form-name" value="contact" />
       <IonItem className={name.touched && !name.isValid ? 'ion-invalid' : ''}>
         <IonLabel position="floating">Full Name</IonLabel>

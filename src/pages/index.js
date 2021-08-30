@@ -15,6 +15,7 @@ import Seo from '../components/seo';
  * 3. SEO
  * 4. extra projects content
  * 5. remove logs on production
+ * 8. contact on homepage (social icons or link to footer)
  *
  * BUGS:
  *
@@ -25,7 +26,6 @@ import Seo from '../components/seo';
  * - requestAnimationFrame
  * - check the loader's impact on scores - probably bad... for now without delete component if sure
  * 7. use labels instead of hard coded text
- * 8. contact on homepage (social icons or link to footer)
  * 9. correlate scroll position with url hash
  * 10. animate horizontal line in about
  * 11. animate something in footer
