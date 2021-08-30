@@ -1,8 +1,9 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import { IonButton, IonIcon, IonSlide, IonSlides } from '@ionic/react';
-import Card from './Card/Card';
 import { chevronBack, chevronForward } from 'ionicons/icons';
 import './Gallery.scss';
+import loadable from '@loadable/component';
+const Card = loadable(() => import('./Card/Card'));
 
 const Gallery = ({ projects }) => {
   const [displayAll, setDisplayAll] = useState(false);
