@@ -95,7 +95,7 @@ const ContactForm = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: encode({
-          'form-name': 'contact',
+          'form-name': 'contact-form',
           name: name.value,
           email: email.value,
           message: message.value,
@@ -111,8 +111,8 @@ const ContactForm = () => {
 
   const { name, email, message } = formControls;
   return (
-    <form name="contact" data-netlify="true" data-netlify-honeypot="bot-field">
-      <input type="hidden" name="form-name" value="contact" />
+    <form name="contact-form" data-netlify="true" data-netlify-honeypot="bot-field">
+      <input type="hidden" name="form-name" value="contact-form" />
       <IonItem className={name.touched && !name.isValid ? 'ion-invalid' : ''}>
         <IonLabel position="floating">Full Name</IonLabel>
         <IonInput
