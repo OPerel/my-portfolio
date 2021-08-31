@@ -30,7 +30,8 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-loadable-components-ssr`,
+    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    `gatsby-plugin-loadable-components-ssr`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

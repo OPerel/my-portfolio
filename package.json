@@ -29,6 +29,7 @@
     "sass": "^1.38.2"
   },
   "devDependencies": {
+    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.24",
     "prettier": "2.3.2"
   },
   "keywords": [
