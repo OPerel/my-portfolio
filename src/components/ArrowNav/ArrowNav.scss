@@ -21,29 +21,31 @@ $hide: opacity 1s;
   z-index: 1;
 
   &:hover {
-    ion-icon {
+    .arrow-nav-icons {
       opacity: 0.6;
     }
   }
 
-  ion-button {
+  .arrow-nav-btn {
     margin: 2.5rem 0;
-    --background: transparent;
-    --background-hover: #FFFFFF82;
-    --box-shadow: none;
+    padding: 0;
 
     &:hover {
-      ion-icon {
+      .arrow-nav-icons {
         opacity: 0.9;
+        background-color: #FFFFFF11;
       }
     }
   }
 
-  ion-icon {
-    margin: 2.5rem 0;
-    font-size: 4rem;
-    opacity: 0.1;
+  .arrow-nav-icons {
+    height: 50px;
+    font-size: 5rem;
+    opacity: 0.3;
     transition: 0.4s;
+    color: whitesmoke;
+    border-radius: 5px;
+    box-shadow: none;
   }
 
   .hide {

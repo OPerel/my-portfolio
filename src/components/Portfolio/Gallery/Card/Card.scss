@@ -7,7 +7,7 @@
   position: relative;
 }
 
-ion-card {
+.card {
   position: relative;
   height: 90%;
   margin: 0;
@@ -19,7 +19,7 @@ ion-card {
     height: 85%;
   }
 
-  ion-card-header {
+  .card-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +32,7 @@ ion-card {
       height: 37%;
     }
 
-    ion-card-title {
+    .card-title {
       color: #fff; //#ffc57d;
       font-size: 2em;
 
@@ -41,7 +41,7 @@ ion-card {
       }
     }
 
-    ion-card-subtitle {
+    .card-subtitle {
       color: #{$secondary-text-color};//#ffc57d;
       font-size: 1.7em;
     }
@@ -54,7 +54,7 @@ ion-card {
     color: #{$main-text-color}; //#c5c5c5;
   }
 
-  ion-card-content {
+  .card-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;

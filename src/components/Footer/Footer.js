@@ -1,7 +1,8 @@
 import React from 'react';
-import { IonIcon, IonRippleEffect } from '@ionic/react';
-import { logoGithub, mailSharp, logoLinkedin } from 'ionicons/icons';
 import ContactForm from './ContactForm/ContactForm';
+import GitHubIcon from '@material-ui/icons/GitHub';
+import EmailIcon from '@material-ui/icons/Mail';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
 const Footer = () => (
@@ -20,8 +21,7 @@ const Footer = () => (
             rel="noopener noreferrer"
             className="ion-activatable"
           >
-            <IonIcon icon={logoGithub} />
-            <IonRippleEffect />
+            <GitHubIcon />
           </a>
           <a
             href="https://www.linkedin.com/in/ori-perelman-0144a5161/"
@@ -29,12 +29,10 @@ const Footer = () => (
             rel="noopener noreferrer"
             className="ion-activatable"
           >
-            <IonIcon icon={logoLinkedin} />
-            <IonRippleEffect />
+            <LinkedInIcon />
           </a>
           <a href="mailto: oriperelman@gmail.com" className="ion-activatable">
-            <IonIcon icon={mailSharp} />
-            <IonRippleEffect />
+            <EmailIcon />
           </a>
         </div>
       </div>

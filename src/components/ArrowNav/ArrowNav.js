@@ -1,6 +1,8 @@
 import React from 'react';
-import { IonButton, IonIcon } from '@ionic/react';
-import { chevronDown, chevronUp } from 'ionicons/icons';
+import Button from "@material-ui/core/Button"
+import KeyboardArrowUpTwoToneIcon from '@material-ui/icons/KeyboardArrowUpTwoTone';
+import KeyboardArrowDownTwoToneIcon from '@material-ui/icons/KeyboardArrowDownTwoTone';
+
 import { useScrollContext } from '../ScrollingProvider';
 import './ArrowNav.scss';
 
@@ -22,21 +24,21 @@ const ArrowNav = () => {
 
   return (
     <div className="arrow-nav">
-      <IonButton
-        className={currentPage === 0 ? 'hide' : ''}
+      <Button
+        className={currentPage === 0 ? 'arrow-nav-btn hide' : 'arrow-nav-btn'}
         onClick={() => handleClick('up')}
         disabled={currentPage === 0}
       >
-        <IonIcon icon={chevronUp} />
-      </IonButton>
+        <KeyboardArrowUpTwoToneIcon className="arrow-nav-icons" />
+      </Button>
 
-      <IonButton
-        className={currentPage === 4 ? 'hide' : ''}
+      <Button
+        className={currentPage === 4 ? 'arrow-nav-btn hide' : 'arrow-nav-btn'}
         onClick={() => handleClick('down')}
         disabled={currentPage === 4}
       >
-        <IonIcon icon={chevronDown} />
-      </IonButton>
+        <KeyboardArrowDownTwoToneIcon className="arrow-nav-icons" />
+      </Button>
     </div>
   );
 };
