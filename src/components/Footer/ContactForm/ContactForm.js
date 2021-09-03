@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import TextField from '@material-ui/core/TextField'
+import TextField from '@material-ui/core/TextField';
 import { doValidation, encode } from '../../../utils';
-import Button from "@material-ui/core/Button"
+import Button from '@material-ui/core/Button';
 
 const initialFormState = {
   name: {
@@ -106,45 +106,48 @@ const ContactForm = () => {
 
   const { name, email, message } = formControls;
   return (
-    <form name="contact-form" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form
+      name="contact-form"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
       <input type="hidden" name="form-name" value="contact-form" />
-        <TextField
-          className="form-input"
-          label="Full Name"
-          type="text"
-          name="name"
-          value={name.value}
-          variant="filled"
-          InputProps={{ classes: { underline: { color: "#f36344" } } }}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
-        <TextField
-          className="form-input"
-          label="Email"
-          type="email"
-          name="email"
-          value={email.value}
-          variant="filled"
-          error={email.touched && !email.isValid}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
-        <TextField
-          className="form-input"
-          label="Message"
-          name="message"
-          multiline
-          rows={4}
-          value={message.value}
-          variant="filled"
-          error={message.touched && !message.isValid}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
+      <TextField
+        className="form-input"
+        label="Full Name"
+        type="text"
+        name="name"
+        value={name.value}
+        variant="filled"
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
+      <TextField
+        className="form-input"
+        label="Email"
+        type="email"
+        name="email"
+        value={email.value}
+        variant="filled"
+        error={email.touched && !email.isValid}
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
+      <TextField
+        className="form-input"
+        label="Message"
+        name="message"
+        multiline
+        rows={4}
+        value={message.value}
+        variant="filled"
+        error={message.touched && !message.isValid}
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
       <Button
         className="btn"
         onClick={e => handleSubmitForm(e)}

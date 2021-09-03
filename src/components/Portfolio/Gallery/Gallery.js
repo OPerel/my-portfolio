@@ -1,7 +1,9 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
-// import { IonButton, IonIcon, IonSlide, IonSlides } from '@ionic/react';
-// import { chevronBack, chevronForward } from 'ionicons/icons';
-import Button from "@material-ui/core/Button"
+import React, { useLayoutEffect, useState } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination, Lazy } from 'swiper';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import Button from '@material-ui/core/Button';
 import ChevronLeftTwoToneIcon from '@material-ui/icons/ChevronLeftTwoTone';
 import ChevronRightTwoToneIcon from '@material-ui/icons/ChevronRightTwoTone';
 import ProjectCard from './Card/Card';
@@ -21,6 +23,8 @@ const Gallery = ({ projects }) => {
   }, [displayAll]);
 
   const sliderOptions = {
+    modules: [Pagination, Lazy],
+    pagination: true,
     mousewheel: true,
     breakpoints: {
       320: {
@@ -32,42 +36,34 @@ const Gallery = ({ projects }) => {
         spaceBetween: 30,
       },
     },
+    onSliderMove: swiper => {
+      const end = swiper.isEnd;
+      setShowBtn(end);
+    },
   };
-
-  const slidesRef = useRef(null);
 
   return (
     <div className="gallery-container">
-      {/*<IonSlides*/}
-      {/*  // TODO: this is bad.. if issue not resolved will have to switch slider. See https://www.npmjs.com/package/react-id-swiper*/}
-      {/*  key={displayProjects.map(p => p.name).join('_')}*/}
-      {/*  pager={true}*/}
-      {/*  options={sliderOptions}*/}
-      {/*  className={*/}
-      {/*    showBtn || displayAll ? 'pagination-start' : 'pagination-center'*/}
-      {/*  }*/}
-      {/*  ref={slidesRef}*/}
-      {/*  onIonSlideDrag={async () => {*/}
-      {/*    const end = await slidesRef.current.isEnd();*/}
-      {/*    setShowBtn(end);*/}
-      {/*  }}*/}
-      {/*>*/}
+      <Swiper
+        className={
+          showBtn || displayAll ? 'pagination-start' : 'pagination-center'
+        }
+        {...sliderOptions}
+      >
         {displayProjects.map(project => (
-          // <IonSlide key={project.name}>
+          <SwiperSlide key={project.name}>
             <ProjectCard project={project} />
-         // {/*</IonSlide>*/}
+          </SwiperSlide>
         ))}
-      {/*</IonSlides>*/}
+      </Swiper>
       <Button
-        className={showBtn || displayAll ? 'gallery-btn' : 'gallery-btn hide'}
+        className={
+          showBtn || displayAll ? 'btn gallery-btn' : 'btn gallery-btn hide'
+        }
         onClick={() => setDisplayAll(!displayAll)}
         startIcon={displayAll ? <ChevronLeftTwoToneIcon /> : null}
         endIcon={displayAll ? null : <ChevronRightTwoToneIcon />}
       >
-        {/*<IonIcon*/}
-        {/*  slot={displayAll ? 'start' : 'end'}*/}
-        {/*  icon={displayAll ? chevronBack : chevronForward}*/}
-        {/*/>*/}
         {displayAll ? 'Hide' : 'See More'}
       </Button>
     </div>
