@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef, useState } from "react"
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
@@ -8,6 +8,7 @@ import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
 import Seo from '../components/seo';
+import { useHasBeenVisible } from "../hooks/useVisibility"
 
 // import loadable from '@loadable/component';
 // const About = loadable(() => import('../components/About/About'));
@@ -28,9 +29,9 @@ import Seo from '../components/seo';
  * TODO: NOT MANDATORY!
  * 5. mobile scroll on swipe
  * 6. performance:
+ * - loading unneeded webfonts (roboto)
  * - gallery photos to webp
  * - requestAnimationFrame
- * - check the loader's impact on scores - probably bad... for now without delete component if sure
  * 7. use labels instead of hard coded text
  * 9. correlate scroll position with url hash
  * 10. animate horizontal line in about
@@ -40,10 +41,15 @@ import Seo from '../components/seo';
  * 14. more data from API (image) or make as much as possible configurable for other developers
  */
 
+// let intersectionObserver;
+
 const IndexPage = ({ pageContext }) => {
   const {
     position: { currentPage },
   } = useScrollContext();
+  const about = useRef();
+  const scrolled = useHasBeenVisible(about)
+
 
   const getAnimeClass = pageIdx => {
     if (currentPage > pageIdx) {
@@ -79,6 +85,8 @@ const IndexPage = ({ pageContext }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
+  console.log('scrolled: ', scrolled)
+
   const {
     basics: { name, label, summary },
     projects,
@@ -91,11 +99,11 @@ const IndexPage = ({ pageContext }) => {
       <Header />
       <main>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
-        <About animeClass={getAnimeClass(1)} summary={summary} />
-        <Portfolio animeClass={getAnimeClass(2)} projects={projects} />
+        <About animeClass={getAnimeClass(1)} summary={summary} ref={about} />
+        <Portfolio animeClass={getAnimeClass(2)} projects={projects} scrolled={scrolled} />
         <Skills animeClass={getAnimeClass(3)} skills={skills} work={work} />
       </main>
-      <Footer />
+      <Footer scrolled={scrolled} />
 
       <ArrowNav />
     </div>

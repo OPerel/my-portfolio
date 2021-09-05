@@ -1,6 +1,6 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination, Lazy } from 'swiper';
+import { Pagination } from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import Button from '@material-ui/core/Button';
@@ -23,7 +23,7 @@ const Gallery = ({ projects }) => {
   }, [displayAll]);
 
   const sliderOptions = {
-    modules: [Pagination, Lazy],
+    modules: [Pagination],
     pagination: true,
     mousewheel: true,
     breakpoints: {

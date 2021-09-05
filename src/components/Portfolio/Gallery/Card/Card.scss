@@ -5,6 +5,10 @@
   height: 100%;
   border-radius: 5px;
   position: relative;
+
+  .MuiPaper-root {
+    background-color: transparent;
+  }
 }
 
 .card {
@@ -61,6 +65,7 @@
     height: 60%;
     padding: 2% 4%;
     color: #fff; //$main-text-color;
+    font-size: 1.2rem;
 
     .project-description {
       padding-bottom: 2%;

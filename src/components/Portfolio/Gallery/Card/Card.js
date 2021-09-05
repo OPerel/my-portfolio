@@ -1,7 +1,6 @@
 import React from 'react';
 import './Card.scss';
 import Button from '@material-ui/core/Button';
-import Card from '@material-ui/core/Card';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LanguageIcon from '@material-ui/icons/Language';
 
@@ -10,7 +9,7 @@ const ProjectCard = ({ project }) => {
   const { url } = images[0]?.resolutions.mobile || '';
   return project ? (
     <div className="card-wrapper">
-      <Card className="card">
+      <div className="card">
         <div
           className="img-wrapper"
           style={{ backgroundImage: `url('${url}')` }}
@@ -22,7 +21,7 @@ const ProjectCard = ({ project }) => {
 
         {roles.length > 0 && <p className="role">{roles}</p>}
 
-        <div className="card-content" style={{ fontSize: '1.3em' }}>
+        <div className="card-content">
           <div className="project-description">{project.description}</div>
           <ul>
             {libraries.concat(languages).map(t => (
@@ -55,7 +54,7 @@ const ProjectCard = ({ project }) => {
             Source
           </Button>
         </div>
-      </Card>
+      </div>
     </div>
   ) : null;
 };

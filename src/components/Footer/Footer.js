@@ -1,11 +1,14 @@
 import React from 'react';
-import ContactForm from './ContactForm/ContactForm';
+// import ContactForm from './ContactForm/ContactForm';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Mail';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
-const Footer = () => (
+import loadable from '@loadable/component';
+const ContactForm = loadable(() => import('./ContactForm/ContactForm'))
+
+const Footer = ({ scrolled }) => (
   <footer>
     <div className="container contact">
       <div className="left-top">
@@ -37,7 +40,19 @@ const Footer = () => (
         </div>
       </div>
 
-      <ContactForm />
+      {scrolled ? (
+        <ContactForm />
+      ): (
+        <form
+          name="contact-form"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+        >
+          <input name="name" />
+          <input name="email" />
+          <input name="message" />
+        </form>
+      )}
     </div>
     <p className="credit">
       <a

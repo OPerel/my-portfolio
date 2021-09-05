@@ -71,7 +71,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   font-family: 'Londrina Solid', sans-serif;
-  --ion-font-family: 'Londrina Solid', sans-serif;
+  //--ion-font-family: 'Londrina Solid', sans-serif;
   color: $main-text-color;
   background-color: $main-background-color;
 }
@@ -162,6 +162,10 @@ section {
 
   &:disabled {
     color: #{$secondary-text-color}aa;
+  }
+
+  .MuiButton-root {
+    color: initial;
   }
 }
 

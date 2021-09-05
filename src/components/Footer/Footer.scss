@@ -64,7 +64,7 @@ footer {
       }
 
       .MuiSvgIcon-root {
-        font-size: 4rem;
+        font-size: 3rem;
         margin: 0 auto;
         padding: 0.5rem 0;
         color: $main-text-color;
@@ -74,7 +74,7 @@ footer {
       a {
         &:first-child {
           .MuiSvgIcon-root {
-            font-size: 3.7rem;
+            font-size: 2.7rem;
           }
         }
       }
@@ -97,6 +97,7 @@ footer {
 
       .MuiFilledInput-root {
         font-size: 1.4rem;
+        font-family: 'Londrina Solid', sans-serif;
         color: #{$main-text-color};
         background-color: transparent;
 
@@ -107,6 +108,7 @@ footer {
 
       .MuiFormLabel-root {
         font-size: 1.2rem;
+        font-family: 'Londrina Solid', sans-serif;
         color: #{$main-text-color};
 
         &.Mui-focused {
