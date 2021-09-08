@@ -28,14 +28,14 @@
     padding: 0;
 
     li {
-      padding: 2px 0;
+      padding: 4px 0;
       transition: .3s;
       &:hover {
-          transition: .3s;
-          transform: translateX(3px);
+        transition: .3s;
+        transform: translateX(3px);
       }
       a {
-        color: #{$main-text-color};
+        color: #9c9c9c;
         &:hover {
           color: #{$secondary-text-color};
         }
@@ -48,7 +48,7 @@
     width: 1px;
     height: 12vh;
     margin: 0 auto;
-    background-color: #{$main-text-color};
+    background-color: #9c9c9c;
   }
 
   @media only screen and (min-width: $small-bp) {
@@ -60,5 +60,5 @@
 .over-s {
   visibility: hidden;
   transform: translateY(-200px);
-  transition: 0.5s;
+  transition: 0.5s 0.8s;
 }
