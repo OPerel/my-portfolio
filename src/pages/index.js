@@ -9,20 +9,13 @@ import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
 import Seo from '../components/seo';
 import { useHasBeenVisible } from "../hooks/useVisibility"
-
-// import loadable from '@loadable/component';
-// const About = loadable(() => import('../components/About/About'));
-// const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'));
-// const Skills = loadable(() => import('../components/Skills/Skills'));
-// const Footer = loadable(() => import('../components/Footer/Footer'));
+import FloatingSocial from "../components/FloatingSocial/FloatingSocial"
 
 /**
  * TODO:
- * 2. Fix dynamic slides number
  * 3. SEO
  * 4. extra projects content
  * 5. remove logs on production
- * 8. contact on homepage (social icons or link to footer)
  *
  * BUGS:
  *
@@ -96,6 +89,7 @@ const IndexPage = ({ pageContext }) => {
     <div>
       <Seo />
       <Header />
+      <FloatingSocial animeClass={currentPage <= 3 ? 'on-s' : 'over-s'}/>
       <main>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
         <About animeClass={getAnimeClass(1)} summary={summary} ref={about} />

@@ -1,0 +1,64 @@
+@import '../../styles/global.scss';
+
+@keyframes enter-social {
+  0% {
+    transform: translateY(-200px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.floating-social {
+  display: none;
+  position: fixed;
+  top: 5vh;
+  left: 0;
+  z-index: 90;
+  width: 5vw;
+  transition: 0.5s 1s;
+
+  animation: enter-social 0.6s 1s backwards;
+
+
+  ul {
+    width: min-content;
+    margin: 1.5vh auto;
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: 2px 0;
+      transition: .3s;
+      &:hover {
+          transition: .3s;
+          transform: translateX(3px);
+      }
+      a {
+        color: #{$main-text-color};
+        &:hover {
+          color: #{$secondary-text-color};
+        }
+      }
+    }
+  }
+
+  .line {
+    right: -10px;
+    width: 1px;
+    height: 12vh;
+    margin: 0 auto;
+    background-color: #{$main-text-color};
+  }
+
+  @media only screen and (min-width: $small-bp) {
+    display: block;
+  }
+
+}
+
+.over-s {
+  visibility: hidden;
+  transform: translateY(-200px);
+  transition: 0.5s;
+}
