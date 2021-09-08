@@ -5,9 +5,13 @@
   height: 100%;
   border-radius: 5px;
   position: relative;
+
+  .MuiPaper-root {
+    background-color: transparent;
+  }
 }
 
-ion-card {
+.card {
   position: relative;
   height: 90%;
   margin: 0;
@@ -19,7 +23,7 @@ ion-card {
     height: 85%;
   }
 
-  ion-card-header {
+  .card-header {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -32,7 +36,7 @@ ion-card {
       height: 37%;
     }
 
-    ion-card-title {
+    .card-title {
       color: #fff; //#ffc57d;
       font-size: 2em;
 
@@ -41,7 +45,7 @@ ion-card {
       }
     }
 
-    ion-card-subtitle {
+    .card-subtitle {
       color: #{$secondary-text-color};//#ffc57d;
       font-size: 1.7em;
     }
@@ -54,12 +58,14 @@ ion-card {
     color: #{$main-text-color}; //#c5c5c5;
   }
 
-  ion-card-content {
+  .card-content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     height: 60%;
+    padding: 2% 4%;
     color: #fff; //$main-text-color;
+    font-size: 1.2rem;
 
     .project-description {
       padding-bottom: 2%;
@@ -120,13 +126,20 @@ ion-card {
   width: 100%;
   text-align: end;
   margin: 1%;
-  ion-button {
+  .card-btn {
+    padding: 1% 3%;
     margin: 1% 0;
-    --background-hover: rgba(255, 255, 255, 0.1);
-    --background-hover-opacity: 0.1;
-    //--background: #5ca39d;
-    --color: #ffffff;
-    --color-hover: #{$secondary-text-color};//#ffc57d;
+    color: #ffffff;
+    font-family: 'Share', sans-serif;
+
+    &:hover {
+      color: #{$secondary-text-color};
+      background-color: #FFFFFF0C;
+    }
+
+    &:disabled {
+      opacity: 0.5;
+    }
   }
 }
 

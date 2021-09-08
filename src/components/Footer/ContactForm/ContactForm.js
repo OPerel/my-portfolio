@@ -1,12 +1,7 @@
 import React, { useReducer } from 'react';
-import {
-  IonButton,
-  IonInput,
-  IonItem,
-  IonLabel,
-  IonTextarea,
-} from '@ionic/react';
+import TextField from '@material-ui/core/TextField';
 import { doValidation, encode } from '../../../utils';
+import Button from '@material-ui/core/Button';
 
 const initialFormState = {
   name: {
@@ -111,49 +106,55 @@ const ContactForm = () => {
 
   const { name, email, message } = formControls;
   return (
-    <form name="contact-form" data-netlify="true" data-netlify-honeypot="bot-field">
+    <form
+      name="contact-form"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+    >
       <input type="hidden" name="form-name" value="contact-form" />
-      <IonItem className={name.touched && !name.isValid ? 'ion-invalid' : ''}>
-        <IonLabel position="floating">Full Name</IonLabel>
-        <IonInput
-          type="text"
-          name="name"
-          value={name.value}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
-      </IonItem>
-      <IonItem className={email.touched && !email.isValid ? 'ion-invalid' : ''}>
-        <IonLabel position="floating">Email</IonLabel>
-        <IonInput
-          type="email"
-          name="email"
-          value={email.value}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
-      </IonItem>
-      <IonItem
-        className={message.touched && !message.isValid ? 'ion-invalid' : ''}
-      >
-        <IonLabel position="floating">Message</IonLabel>
-        <IonTextarea
-          name="message"
-          enterkeyhint="done"
-          value={message.value}
-          onInput={e => {
-            handleInputChange(e);
-          }}
-        />
-      </IonItem>
-      <IonButton
+      <TextField
+        className="form-input"
+        label="Full Name"
+        type="text"
+        name="name"
+        value={name.value}
+        variant="filled"
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
+      <TextField
+        className="form-input"
+        label="Email"
+        type="email"
+        name="email"
+        value={email.value}
+        variant="filled"
+        error={email.touched && !email.isValid}
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
+      <TextField
+        className="form-input"
+        label="Message"
+        name="message"
+        multiline
+        rows={4}
+        value={message.value}
+        variant="filled"
+        error={message.touched && !message.isValid}
+        onInput={e => {
+          handleInputChange(e);
+        }}
+      />
+      <Button
+        className="btn"
         onClick={e => handleSubmitForm(e)}
         disabled={!formControls.formIsValid}
       >
         Submit
-      </IonButton>
+      </Button>
       {/* TODO: style submit messages */}
       {formControls.submitted && <span>Thank you!</span>}
       {formControls.error && <span>Not sent!</span>}

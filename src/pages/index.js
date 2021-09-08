@@ -1,15 +1,20 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from "react"
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
+import About from '../components/About/About';
+import Portfolio from '../components/Portfolio/Portfolio';
+import Skills from '../components/Skills/Skills';
+import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
 import Seo from '../components/seo';
+import { useHasBeenVisible } from "../hooks/useVisibility"
 
-import loadable from '@loadable/component';
-const About = loadable(() => import('../components/About/About'));
-const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'));
-const Skills = loadable(() => import('../components/Skills/Skills'));
-const Footer = loadable(() => import('../components/Footer/Footer'));
+// import loadable from '@loadable/component';
+// const About = loadable(() => import('../components/About/About'));
+// const Portfolio = loadable(() => import('../components/Portfolio/Portfolio'));
+// const Skills = loadable(() => import('../components/Skills/Skills'));
+// const Footer = loadable(() => import('../components/Footer/Footer'));
 
 /**
  * TODO:
@@ -24,9 +29,9 @@ const Footer = loadable(() => import('../components/Footer/Footer'));
  * TODO: NOT MANDATORY!
  * 5. mobile scroll on swipe
  * 6. performance:
+ * - loading unneeded webfonts (roboto)
  * - gallery photos to webp
  * - requestAnimationFrame
- * - check the loader's impact on scores - probably bad... for now without delete component if sure
  * 7. use labels instead of hard coded text
  * 9. correlate scroll position with url hash
  * 10. animate horizontal line in about
@@ -36,10 +41,15 @@ const Footer = loadable(() => import('../components/Footer/Footer'));
  * 14. more data from API (image) or make as much as possible configurable for other developers
  */
 
+// let intersectionObserver;
+
 const IndexPage = ({ pageContext }) => {
   const {
     position: { currentPage },
   } = useScrollContext();
+  const about = useRef();
+  const scrolled = useHasBeenVisible(about)
+
 
   const getAnimeClass = pageIdx => {
     if (currentPage > pageIdx) {
@@ -55,6 +65,7 @@ const IndexPage = ({ pageContext }) => {
     // disable animation on mobile keyboard open
     if (currentPage === 4) {
       let timer;
+      // TODO: try refactor to useRef hook
       const docEl = document.documentElement;
       const main = docEl.querySelector('main');
       const footer = docEl.querySelector('footer');
@@ -80,17 +91,18 @@ const IndexPage = ({ pageContext }) => {
     skills,
     work,
   } = pageContext.data;
+
   return (
     <div>
       <Seo />
       <Header />
       <main>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
-        <About animeClass={getAnimeClass(1)} summary={summary} />
-        <Portfolio animeClass={getAnimeClass(2)} projects={projects} />
+        <About animeClass={getAnimeClass(1)} summary={summary} ref={about} />
+        <Portfolio animeClass={getAnimeClass(2)} projects={projects} scrolled={scrolled} />
         <Skills animeClass={getAnimeClass(3)} skills={skills} work={work} />
       </main>
-      <Footer />
+      <Footer scrolled={scrolled} />
 
       <ArrowNav />
     </div>

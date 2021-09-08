@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { forwardRef } from "react"
 import './About.scss';
 import Parallax from '../Parallax/Parallax';
 import RotatingTri from '../RotatingTri/RotatingTri';
 
-const About = ({ animeClass, summary }) => {
+const About = forwardRef(({ animeClass, summary }, ref) => {
   return (
-    <section className="app-about">
+    <section className="app-about" ref={ref}>
       <div className="container">
         <Parallax
           animeClass={animeClass}
@@ -46,6 +46,6 @@ const About = ({ animeClass, summary }) => {
       />
     </section>
   );
-};
+});
 
 export default About;

@@ -7,7 +7,7 @@
 
   Any global CSS variables should also be applied here.
 */
-@import 'node_modules/@ionic/core/css/core';
+//@import 'node_modules/@ionic/core/css/core';
 
 // Colors
 
@@ -71,7 +71,7 @@ html, body {
   width: 100vw;
   height: 100vh;
   font-family: 'Londrina Solid', sans-serif;
-  --ion-font-family: 'Londrina Solid', sans-serif;
+  //--ion-font-family: 'Londrina Solid', sans-serif;
   color: $main-text-color;
   background-color: $main-background-color;
 }
@@ -142,5 +142,6 @@ section {
     width: 70%;
   }
 }
+
 
 

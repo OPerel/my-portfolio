@@ -1,7 +1,10 @@
 @import '../../../styles/global.scss';
 
-ion-slides {
-  height: 75vh;
+.swiper {
+  height: 100%;
+  .swiper-pagination-bullet {
+    background: #{$main-text-color};
+  }
   .swiper-pagination-bullet-active {
     background: #{$secondary-text-color};
   }
@@ -30,25 +33,38 @@ ion-slides {
 .gallery-container {
   position: relative;
   width: 96vw;
+  height: 75vh;
   margin: 0 auto;
 
-  ion-button.gallery-btn {
+  .gallery-btn {
     position: absolute;
     right: 5%;
     bottom: 0;
+    margin: 0;
 
-    width: 30vw;
-    border: 0.5px solid;
-    font-family: 'Share', sans-serif;
+    display: flex;
     font-size: 1rem;
-    --color: #{$secondary-text-color};
-    --background: transparent; // #202e48; // #182d55;
-    --background-hover: #{$secondary-text-color}aa; // #599292;
-    --box-shadow: none;
     z-index: 2;
     visibility: visible;
     transform: translateY(0);
-    transition: .5s;
+    transition: .7s;
+
+    padding: 0.3%;
+    width: 30%;
+    border: 0.5px solid;
+    border-radius: 0;
+    font-family: 'Share', sans-serif;
+    color: #{$secondary-text-color};
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #{$secondary-text-color}10;
+    }
+
+    &:disabled {
+      color: #{$secondary-text-color}aa;
+    }
 
     @media only screen and (min-width: $small-bp) {
       width: 10vw;
