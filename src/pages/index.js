@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef } from "react"
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
@@ -85,14 +85,13 @@ const IndexPage = ({ pageContext }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentPage]);
 
-  console.log('scrolled: ', scrolled)
-
   const {
     basics: { name, label, summary },
     projects,
     skills,
     work,
   } = pageContext.data;
+
   return (
     <div>
       <Seo />

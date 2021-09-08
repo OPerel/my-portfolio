@@ -2,6 +2,9 @@
 
 .swiper {
   height: 100%;
+  .swiper-pagination-bullet {
+    background: #{$main-text-color};
+  }
   .swiper-pagination-bullet-active {
     background: #{$secondary-text-color};
   }
@@ -44,7 +47,24 @@
     z-index: 2;
     visibility: visible;
     transform: translateY(0);
-    transition: .5s;
+    transition: .7s;
+
+    padding: 0.3%;
+    width: 30%;
+    border: 0.5px solid;
+    border-radius: 0;
+    font-family: 'Share', sans-serif;
+    color: #{$secondary-text-color};
+    background: transparent;
+    box-shadow: none;
+
+    &:hover {
+      background-color: #{$secondary-text-color}10;
+    }
+
+    &:disabled {
+      color: #{$secondary-text-color}aa;
+    }
 
     @media only screen and (min-width: $small-bp) {
       width: 10vw;

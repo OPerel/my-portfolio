@@ -133,6 +133,28 @@ footer {
         }
       }
     }
+
+    .btn {
+      display: block;
+      margin: 5% auto;
+      padding: 0.3%;
+      width: 30%;
+      border: 0.5px solid;
+      border-radius: 0;
+      font-family: 'Share', sans-serif;
+      font-size: 1.3rem;
+      color: #{$secondary-text-color};
+      background: transparent;
+      box-shadow: none;
+
+      &:hover {
+        background-color: #{$secondary-text-color}10;
+      }
+
+      &:disabled {
+        color: #{$secondary-text-color}aa;
+      }
+    }
   }
 
   p.credit {
