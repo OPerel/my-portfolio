@@ -8,7 +8,7 @@ nav.main-nav {
   width: 100%;
   background-color: #000; //#090a16; //$color-complement-1;
 
-  ul {
+  .nav-list {
     position: relative;
     width: 80vw;
     display: grid;
@@ -22,7 +22,7 @@ nav.main-nav {
       width: 40vw;
     }
 
-    li {
+    .nav-item {
       width: 100%;
       margin: 0;
       height: 50px;
@@ -86,7 +86,7 @@ nav.main-nav {
     left: 0;
     width: calc(80vw / 5);
     height: 100%;
-    background-color: $secondary-text-color;
+    background-color: #f36344;
 
     transform: translateX(calc(var(--activeNav) * 2vw));
     transition: $scroll;

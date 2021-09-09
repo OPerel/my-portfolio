@@ -11,25 +11,25 @@ const Header = () => {
   return (
     <header>
       <nav className="main-nav">
-        <ul className="list">
+        <div className="nav-list">
           <div className="active-bg" />
           <hr />
-          <li id="h" className={currentPage === 0 ? 'active' : ''}>
+          <div id="h" className={currentPage === 0 ? 'nav-item active' : 'nav-item'}>
             <button onClick={() => handleNavigation(0)}>Home</button>
-          </li>
-          <li id="a" className={currentPage === 1 ? 'active' : ''}>
+          </div>
+          <div id="a" className={currentPage === 1 ? 'nav-item active' : 'nav-item'}>
             <button onClick={() => handleNavigation(1)}>About</button>
-          </li>
-          <li id="p" className={currentPage === 2 ? 'active' : ''}>
+          </div>
+          <div id="p" className={currentPage === 2 ? 'nav-item active' : 'nav-item'}>
             <button onClick={() => handleNavigation(2)}>Portfolio</button>
-          </li>
-          <li id="s" className={currentPage === 3 ? 'active' : ''}>
+          </div>
+          <div id="s" className={currentPage === 3 ? 'nav-item active' : 'nav-item'}>
             <button onClick={() => handleNavigation(3)}>Skills</button>
-          </li>
-          <li id="c" className={currentPage === 4 ? 'active' : ''}>
+          </div>
+          <div id="c" className={currentPage === 4 ? 'nav-item active' : 'nav-item'}>
             <button onClick={() => handleNavigation(4)}>Contact</button>
-          </li>
-        </ul>
+          </div>
+        </div>
       </nav>
     </header>
   );
