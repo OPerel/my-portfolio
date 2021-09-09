@@ -28,6 +28,7 @@ const ArrowNav = () => {
         className={currentPage === 0 ? 'arrow-nav-btn hide' : 'arrow-nav-btn'}
         onClick={() => handleClick('up')}
         disabled={currentPage === 0}
+        aria-label="previous page"
       >
         <KeyboardArrowUpTwoToneIcon className="arrow-nav-icons" />
       </Button>
@@ -36,6 +37,7 @@ const ArrowNav = () => {
         className={currentPage === 4 ? 'arrow-nav-btn hide' : 'arrow-nav-btn'}
         onClick={() => handleClick('down')}
         disabled={currentPage === 4}
+        aria-label="next page"
       >
         <KeyboardArrowDownTwoToneIcon className="arrow-nav-icons" />
       </Button>

@@ -22,7 +22,7 @@ const Footer = ({ scrolled }) => (
             href="https://github.com/OPerel"
             target="_blank"
             rel="noopener noreferrer"
-            className="ion-activatable"
+            aria-label="github link"
           >
             <GitHubIcon />
           </a>
@@ -30,11 +30,11 @@ const Footer = ({ scrolled }) => (
             href="https://www.linkedin.com/in/ori-perelman-0144a5161/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ion-activatable"
+            aria-label="linkedin link"
           >
             <LinkedInIcon />
           </a>
-          <a href="mailto: oriperelman@gmail.com" className="ion-activatable">
+          <a href="mailto: oriperelman@gmail.com" aria-label="email link">
             <EmailIcon />
           </a>
         </div>

@@ -15,7 +15,6 @@ import FloatingSocial from "../components/FloatingSocial/FloatingSocial"
  * TODO:
  * 3. SEO
  * 4. extra projects content
- * 5. remove logs on production
  *
  * BUGS:
  *
@@ -63,7 +62,7 @@ const IndexPage = ({ pageContext }) => {
       const main = docEl.querySelector('main');
       const footer = docEl.querySelector('footer');
       const skills = docEl.querySelector('.skills-container');
-      window.addEventListener('resize', e => {
+      window.addEventListener('resize', () => {
         main.classList.add('keyboard-open');
         footer.classList.toggle('keyboard-footer');
         skills.classList.toggle('keyboard-skills');

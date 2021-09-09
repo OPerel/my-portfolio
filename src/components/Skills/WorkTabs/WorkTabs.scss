@@ -41,8 +41,9 @@ div.work-tabs-nav {
     button.active {
       pointer-events: none;
       color: #{$secondary-text-color};
-      background-color: rgba(30, 32, 35, 0.36);
+      background-color: #1E202337;
       border-bottom: 0.5px solid;
+      font-weight: 600;
     }
 
     @media only screen and (min-width: $small-bp) {

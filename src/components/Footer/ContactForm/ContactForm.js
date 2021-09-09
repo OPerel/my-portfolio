@@ -115,6 +115,9 @@ const ContactForm = () => {
       <TextField
         className="form-input"
         label="Full Name"
+        inputProps={{
+          'aria-label': "full name"
+        }}
         type="text"
         name="name"
         value={name.value}
@@ -126,6 +129,9 @@ const ContactForm = () => {
       <TextField
         className="form-input"
         label="Email"
+        inputProps={{
+          'aria-label': "email"
+        }}
         type="email"
         name="email"
         value={email.value}
@@ -138,6 +144,9 @@ const ContactForm = () => {
       <TextField
         className="form-input"
         label="Message"
+        inputProps={{
+          'aria-label': "message"
+        }}
         name="message"
         multiline
         rows={4}

@@ -14,22 +14,23 @@ const FloatingSocial = ({ animeClass }) => {
             href="https://github.com/OPerel"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="github link"
           >
             <GitHubIcon />
           </a>
-          <span></span>
         </li>
         <li>
           <a
             href="https://www.linkedin.com/in/ori-perelman-0144a5161/"
             target="_blank"
             rel="noopener noreferrer"
+            aria-label="linkedin link"
           >
             <LinkedInIcon />
           </a>
         </li>
         <li>
-          <a href="mailto: oriperelman@gmail.com">
+          <a href="mailto: oriperelman@gmail.com" aria-label="email link">
             <EmailIcon />
           </a>
         </li>

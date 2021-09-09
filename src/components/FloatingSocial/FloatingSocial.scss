@@ -2,7 +2,7 @@
 
 @keyframes enter-social {
   0% {
-    transform: translateY(-200px);
+    transform: translateY(-25vh);
   }
   100% {
     transform: translateY(0);
@@ -46,7 +46,7 @@
   .line {
     right: -10px;
     width: 1px;
-    height: 12vh;
+    height: 10vh;
     margin: 0 auto;
     background-color: #9c9c9c;
   }
@@ -59,6 +59,6 @@
 
 .over-s {
   visibility: hidden;
-  transform: translateY(-200px);
-  transition: 0.5s 0.8s;
+  transform: translateY(-25vh);
+  transition: 0.5s calc(var(--sectionGap) * 0.8s);
 }
