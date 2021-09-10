@@ -116,7 +116,7 @@ const ContactForm = () => {
         className="form-input"
         label="Full Name"
         inputProps={{
-          'aria-label': "full name"
+          'aria-label': 'full name',
         }}
         type="text"
         name="name"
@@ -130,7 +130,7 @@ const ContactForm = () => {
         className="form-input"
         label="Email"
         inputProps={{
-          'aria-label': "email"
+          'aria-label': 'email',
         }}
         type="email"
         name="email"
@@ -145,7 +145,7 @@ const ContactForm = () => {
         className="form-input"
         label="Message"
         inputProps={{
-          'aria-label': "message"
+          'aria-label': 'message',
         }}
         name="message"
         multiline

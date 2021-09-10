@@ -69,6 +69,11 @@ div.work-tabs-nav {
 .info {
   p.work-title {
     margin-top: 0;
+
+    a {
+      color: #{$secondary-text-color};
+      font-weight: 600;
+    }
   }
 
   ul {

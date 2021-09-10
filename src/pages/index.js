@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react"
+import React, { useEffect, useRef } from 'react';
 import { useScrollContext } from '../components/ScrollingProvider';
 import Home from '../components/Home/Home';
 import Header from '../components/Header/Header';
@@ -8,25 +8,22 @@ import Skills from '../components/Skills/Skills';
 import Footer from '../components/Footer/Footer';
 import ArrowNav from '../components/ArrowNav/ArrowNav';
 import Seo from '../components/seo';
-import { useHasBeenVisible } from "../hooks/useVisibility"
-import FloatingSocial from "../components/FloatingSocial/FloatingSocial"
+import { useHasBeenVisible } from '../hooks/useVisibility';
+import FloatingSocial from '../components/FloatingSocial/FloatingSocial';
 
 /**
  * TODO:
- * 3. SEO
- * 4. extra projects content
  *
  * BUGS:
  *
  * TODO: NOT MANDATORY!
  * 5. mobile scroll on swipe
  * 6. performance:
- * - loading unneeded webfonts (roboto)
+ * - check lazy loading
  * - gallery photos to webp
  * - requestAnimationFrame
  * 7. use labels instead of hard coded text
  * 9. correlate scroll position with url hash
- * 10. animate horizontal line in about
  * 11. animate something in footer
  * 12. more bg images?
  * 13. changes background and parallax?
@@ -40,8 +37,7 @@ const IndexPage = ({ pageContext }) => {
     position: { currentPage },
   } = useScrollContext();
   const about = useRef();
-  const scrolled = useHasBeenVisible(about)
-
+  const scrolled = useHasBeenVisible(about);
 
   const getAnimeClass = pageIdx => {
     if (currentPage > pageIdx) {
@@ -88,11 +84,15 @@ const IndexPage = ({ pageContext }) => {
     <div>
       <Seo />
       <Header />
-      <FloatingSocial animeClass={currentPage <= 3 ? 'on-s' : 'over-s'}/>
+      <FloatingSocial animeClass={currentPage <= 3 ? 'on-s' : 'over-s'} />
       <main>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
         <About animeClass={getAnimeClass(1)} summary={summary} ref={about} />
-        <Portfolio animeClass={getAnimeClass(2)} projects={projects} scrolled={scrolled} />
+        <Portfolio
+          animeClass={getAnimeClass(2)}
+          projects={projects}
+          scrolled={scrolled}
+        />
         <Skills animeClass={getAnimeClass(3)} skills={skills} work={work} />
       </main>
       <Footer scrolled={scrolled} />

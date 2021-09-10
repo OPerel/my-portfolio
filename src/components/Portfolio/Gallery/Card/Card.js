@@ -22,8 +22,11 @@ const ProjectCard = ({ project }) => {
         {roles.length > 0 && <p className="role">{roles}</p>}
 
         <div className="card-content">
-          <div className="project-description">{project.description}</div>
-          <ul>
+          <div
+            className="project-description"
+            dangerouslySetInnerHTML={{ __html: project.description }}
+          />
+          <ul className="techs">
             {libraries.concat(languages).map(t => (
               <li key={t}>{t}</li>
             ))}

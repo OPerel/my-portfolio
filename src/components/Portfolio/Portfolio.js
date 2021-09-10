@@ -1,4 +1,4 @@
-import React from "react"
+import React from 'react';
 // import Gallery from './Gallery/Gallery';
 import Parallax from '../Parallax/Parallax';
 import './Portfolio.scss';
@@ -12,7 +12,6 @@ const Gallery = loadable(() => import('./Gallery/Gallery'));
 // );
 
 const Portfolio = ({ animeClass, projects, scrolled }) => {
-
   return (
     <section className="app-portfolio">
       <div className="container">

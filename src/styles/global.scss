@@ -12,7 +12,7 @@
 // Colors
 $main-text-color: #AED6D4;
 //$test: #f36344;
-$secondary-text-color:#FF3D00;
+$secondary-text-color: #FF3D00;
 $main-background-color: #090a16;
 $about-background-color: #226765;
 $skills-background-color: #0D5452;
@@ -110,10 +110,11 @@ p {
 }
 
 a {
-  color: $secondary-text-color;
+  color: $main-text-color;
   text-decoration: none;
 
   &:hover {
+    color: $secondary-text-color;
     text-decoration: underline;
   }
 }

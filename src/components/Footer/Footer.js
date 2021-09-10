@@ -6,7 +6,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import './Footer.scss';
 
 import loadable from '@loadable/component';
-const ContactForm = loadable(() => import('./ContactForm/ContactForm'))
+const ContactForm = loadable(() => import('./ContactForm/ContactForm'));
 
 const Footer = ({ scrolled }) => (
   <footer>
@@ -42,7 +42,7 @@ const Footer = ({ scrolled }) => (
 
       {scrolled ? (
         <ContactForm />
-      ): (
+      ) : (
         <form
           name="contact-form"
           data-netlify="true"

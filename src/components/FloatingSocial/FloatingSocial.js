@@ -1,12 +1,12 @@
-import React from "react"
-import './FloatingSocial.scss'
+import React from 'react';
+import './FloatingSocial.scss';
 // import Parallax from "../Parallax/Parallax"
-import GitHubIcon from "@material-ui/icons/GitHub"
-import LinkedInIcon from "@material-ui/icons/LinkedIn"
-import EmailIcon from "@material-ui/icons/Mail"
+import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import EmailIcon from '@material-ui/icons/Mail';
 const FloatingSocial = ({ animeClass }) => {
   return (
-    <div  className={`floating-social ${animeClass}`}>
+    <div className={`floating-social ${animeClass}`}>
       <div className="line" />
       <ul>
         <li>
@@ -36,7 +36,7 @@ const FloatingSocial = ({ animeClass }) => {
         </li>
       </ul>
     </div>
-  )
-}
+  );
+};
 
 export default FloatingSocial;

@@ -80,7 +80,7 @@
       display: none;
     }
 
-    ul {
+    ul.techs {
       margin: 0.5em 0;
       display: flex;
       justify-content: flex-start;
@@ -109,7 +109,7 @@
     height: 25%;
     overflow: hidden;
     background-blend-mode: overlay;
-    background-color: #01212c;
+    background-color: #011921;
     background-size: cover;
     z-index: -1;
 

@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"
+import React, { forwardRef } from 'react';
 import './About.scss';
 import Parallax from '../Parallax/Parallax';
 import RotatingTri from '../RotatingTri/RotatingTri';
