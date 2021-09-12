@@ -13,6 +13,8 @@ import FloatingSocial from '../components/FloatingSocial/FloatingSocial';
 
 /**
  * TODO:
+ * Add resume download button (probably in skills)
+ * Remove unused gatsby plugins (images?)
  *
  * BUGS:
  *
@@ -20,6 +22,7 @@ import FloatingSocial from '../components/FloatingSocial/FloatingSocial';
  * 5. mobile scroll on swipe
  * 6. performance:
  * - check lazy loading
+ * - check option to refactor images to gatsby-images (remove plugins if not)
  * - gallery photos to webp
  * - requestAnimationFrame
  * 7. use labels instead of hard coded text

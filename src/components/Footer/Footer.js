@@ -54,7 +54,10 @@ const Footer = ({ scrolled }) => (
         </form>
       )}
     </div>
+
     <p className="credit">
+      {/* We all like to get credit for our hard work */}
+      {/* If you use this repo, please leave this <p> tag as it is */}
       <a
         href="https://github.com/OPerel/my-portfolio"
         target="_blank"
