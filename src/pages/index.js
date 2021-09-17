@@ -13,7 +13,6 @@ import FloatingSocial from '../components/FloatingSocial/FloatingSocial';
 
 /**
  * TODO:
- * Add resume download button (probably in skills)
  * Remove unused gatsby plugins (images?)
  *
  * BUGS:

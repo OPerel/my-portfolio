@@ -3,6 +3,7 @@ import WorkTabs from './WorkTabs/WorkTabs';
 import RotatingTri from '../RotatingTri/RotatingTri';
 import './Skills.scss';
 import Parallax from '../Parallax/Parallax';
+import Button from "@material-ui/core/Button"
 
 const Skills = ({ animeClass, skills, work }) => {
   return (

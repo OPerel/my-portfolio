@@ -1,8 +1,10 @@
 @import '../../styles/global.scss';
 
+$iconsTrans: -30vh;
+
 @keyframes enter-social {
   0% {
-    transform: translateY(-25vh);
+    transform: translateY($iconsTrans);
   }
   100% {
     transform: translateY(0);
@@ -59,6 +61,6 @@
 
 .over-s {
   visibility: hidden;
-  transform: translateY(-25vh);
+  transform: translateY($iconsTrans);
   transition: 0.5s calc(var(--sectionGap) * 0.8s);
 }
