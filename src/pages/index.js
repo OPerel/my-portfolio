@@ -51,24 +51,23 @@ const IndexPage = ({ pageContext }) => {
     return 'on';
   };
 
+  const main = useRef(null);
+  const footer = useRef(null);
+  const skillsEl = useRef(null);
+
   useEffect(() => {
     // disable animation on mobile keyboard open
     if (currentPage === 4) {
       let timer;
-      // TODO: try refactor to useRef hook
-      const docEl = document.documentElement;
-      const main = docEl.querySelector('main');
-      const footer = docEl.querySelector('footer');
-      const skills = docEl.querySelector('.skills-container');
       window.addEventListener('resize', () => {
-        main.classList.add('keyboard-open');
-        footer.classList.toggle('keyboard-footer');
-        skills.classList.toggle('keyboard-skills');
+        main.current.classList.add('keyboard-open');
+        footer.current.classList.toggle('keyboard-footer');
+        skillsEl.current.classList.toggle('keyboard-skills');
         if (timer) {
           clearTimeout(timer);
         }
         timer = setTimeout(() => {
-          main.classList.remove('keyboard-open');
+          main.current.classList.remove('keyboard-open');
         }, 300);
       });
     }
@@ -87,7 +86,7 @@ const IndexPage = ({ pageContext }) => {
       <Seo />
       <Header />
       <FloatingSocial animeClass={currentPage <= 3 ? 'on-s' : 'over-s'} />
-      <main>
+      <main ref={main}>
         <Home animeClass={getAnimeClass(0)} name={name} label={label} />
         <About animeClass={getAnimeClass(1)} summary={summary} ref={about} />
         <Portfolio
@@ -95,9 +94,9 @@ const IndexPage = ({ pageContext }) => {
           projects={projects}
           scrolled={scrolled}
         />
-        <Skills animeClass={getAnimeClass(3)} skills={skills} work={work} />
+        <Skills ref={skillsEl} animeClass={getAnimeClass(3)} skills={skills} work={work} />
       </main>
-      <Footer scrolled={scrolled} />
+      <Footer ref={footer} scrolled={scrolled} />
 
       <ArrowNav />
     </div>

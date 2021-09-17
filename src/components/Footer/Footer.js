@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from "react"
 // import ContactForm from './ContactForm/ContactForm';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Mail';
@@ -8,8 +8,8 @@ import './Footer.scss';
 import loadable from '@loadable/component';
 const ContactForm = loadable(() => import('./ContactForm/ContactForm'));
 
-const Footer = ({ scrolled }) => (
-  <footer>
+const Footer = forwardRef(({ scrolled }, ref) => (
+  <footer ref={ref}>
     <div className="container contact">
       <div className="left-top">
         <div>
@@ -67,6 +67,6 @@ const Footer = ({ scrolled }) => (
       </a>
     </p>
   </footer>
-);
+));
 
 export default Footer;

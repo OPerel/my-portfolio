@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { forwardRef } from "react"
 import WorkTabs from './WorkTabs/WorkTabs';
 import RotatingTri from '../RotatingTri/RotatingTri';
 import './Skills.scss';
 import Parallax from '../Parallax/Parallax';
-import Button from "@material-ui/core/Button"
 
-const Skills = ({ animeClass, skills, work }) => {
+const Skills = forwardRef(({ animeClass, skills, work }, ref) => {
   return (
     <div className="skills-wrapper">
       <section className="app-skills">
@@ -17,7 +16,7 @@ const Skills = ({ animeClass, skills, work }) => {
             <h2>Skills & Experience</h2>
           </Parallax>
 
-          <div className="skills-container">
+          <div className="skills-container" ref={ref}>
             <div className="skills-list">
               {skills.map(s => (
                 <div key={s.name} className="skills-item">
@@ -49,6 +48,6 @@ const Skills = ({ animeClass, skills, work }) => {
       <div className="end-tri" />
     </div>
   );
-};
+});
 
 export default Skills;
