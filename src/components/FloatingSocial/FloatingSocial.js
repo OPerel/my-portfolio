@@ -42,11 +42,16 @@ const FloatingSocial = ({ animeClass }) => {
           onMouseOver={() => setHover(true)}
           onMouseOut={() => setHover(false)}
         >
-          <a className="resume" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+          <a
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="resume link"
+          >
             <PictureAsPdf />
           </a>
           {hover && (
-            <span style={{ position: 'absolute', left: '35px', padding: '2px' }}>Resume</span>
+            <span className="resume">Resume</span>
           )}
         </li>
       </ul>
