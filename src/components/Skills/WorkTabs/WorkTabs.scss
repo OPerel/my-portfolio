@@ -68,11 +68,21 @@ div.work-tabs-nav {
 
 .info {
   p.work-title {
-    margin-top: 0;
+    @media only screen and (min-width: $small-bp) {
+      margin-top: 0;
+    }
 
     a {
       color: #{$secondary-text-color};
       font-weight: 600;
+    }
+
+    span.work-period {
+      font-size: 1rem;
+
+      @media only screen and (min-width: $small-bp) {
+        margin-left: 1rem;
+      }
     }
   }
 
@@ -82,16 +92,10 @@ div.work-tabs-nav {
 
     li {
       padding: 0 0 2% 1%;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
 
       &::marker {
-        //content: '\2727';//'\2713';
-        //margin-right: 1em;
         color: #{$secondary-text-color};
-      }
-
-      @media only screen and (min-width: $small-bp) {
-        font-size: 1.2rem;
       }
     }
   }

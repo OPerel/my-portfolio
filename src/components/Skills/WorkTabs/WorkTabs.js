@@ -41,6 +41,15 @@ const WorkTabs = ({ work }) => {
           ) : (
             <span>{workPlaceData.company}</span>
           )}
+          &nbsp;
+          <span className="work-period">
+            {new Date(workPlaceData.startDate).toLocaleDateString('default', {
+              year: 'numeric',
+              month: 'short'
+            })}
+            {' - '}
+            {workPlaceData.isCurrentRole ?  'Present' : workPlaceData.endDate}
+          </span>
         </p>
         <p>{workPlaceData.summary}</p>
         <ul>
