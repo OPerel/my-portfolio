@@ -19,7 +19,7 @@ const Portfolio = ({ animeClass, projects, scrolled }) => {
       </div>
       <Parallax
         animeClass={animeClass}
-        positions={{ on: 0, over: -50, under: 60 }}
+        positions={{ on: 5, over: -50, under: 60 }}
       >
         {scrolled && <Gallery projects={projects} />}
       </Parallax>

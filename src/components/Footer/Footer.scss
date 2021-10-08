@@ -64,7 +64,7 @@ footer {
       }
 
       .MuiSvgIcon-root {
-        font-size: 3rem;
+        font-size: 2.4rem;
         margin: 0 auto;
         padding: 0.5rem 0;
         color: $main-text-color;
@@ -74,7 +74,7 @@ footer {
       a {
         &:first-child {
           .MuiSvgIcon-root {
-            font-size: 2.7rem;
+            font-size: 2rem;
           }
         }
       }
@@ -82,7 +82,7 @@ footer {
       @media only screen and (min-width: $small-bp) {
         width: 80%;
         margin: 15% 0;
-        padding: 0.8rem;
+        padding: 0.8rem 0;
         flex-direction: row;
         border-top: 0.5px solid;
       }

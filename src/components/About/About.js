@@ -14,24 +14,26 @@ const About = forwardRef(({ animeClass, summary }, ref) => {
           <h2>About Me</h2>
         </Parallax>
 
-        <div className="img-wrapper">
-          <div
-            className="right-line"
-            style={{
-              height: animeClass === 'on' ? `99%` : '0',
-            }}
+        <div className="about-content">
+          <div className="img-wrapper">
+            <div
+              className="right-line"
+              style={{
+                height: animeClass === 'on' ? `99%` : '0',
+              }}
+            />
+            <div
+              className="bottom-line"
+              style={{
+                width: animeClass === 'on' ? `99%` : '0',
+              }}
+            />
+            <div className="my-image" />
+          </div>
+          <p
+            dangerouslySetInnerHTML={{ __html: summary.replace(/\n/g, '<br/>') }}
           />
-          <div
-            className="bottom-line"
-            style={{
-              width: animeClass === 'on' ? `99%` : '0',
-            }}
-          />
-          <div className="my-image" />
         </div>
-        <p
-          dangerouslySetInnerHTML={{ __html: summary.replace(/\n/g, '<br/>') }}
-        />
       </div>
 
       <RotatingTri

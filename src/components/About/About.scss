@@ -3,13 +3,24 @@
 .app-about {
   background-color: #0e3634;// #001715; // $about-background-color;
 
+  .about-content {
+    display: block;
+
+    @media only screen and (min-width: $small-bp) {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+    }
+  }
+
   .img-wrapper {
     position: relative;
     float: right;
-    margin: 0 0 1% 2%;
+    margin: 0 0 1rem 1rem;
 
     @media only screen and (min-width: $small-bp) {
-      margin-left: 5%;
+      margin-left: 3rem;
+      float: none;
     }
   }
 

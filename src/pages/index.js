@@ -18,6 +18,7 @@ import FloatingSocial from '../components/FloatingSocial/FloatingSocial';
  * BUGS:
  *
  * TODO: NOT MANDATORY!
+ * 4. Ackee events to track scrolling and see more projects (what else?)
  * 5. mobile scroll on swipe
  * 6. performance:
  * - check lazy loading
