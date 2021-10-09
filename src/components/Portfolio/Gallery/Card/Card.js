@@ -15,8 +15,8 @@ const ProjectCard = ({ project }) => {
           style={{ backgroundImage: `url('${url}')` }}
         />
         <div className="card-header">
-          <div className="card-title">{project.displayName}</div>
-          <div className="card-subtitle">{project.summary}</div>
+          <h3 className="card-title">{project.displayName}</h3>
+          <p className="card-subtitle">{project.summary}</p>
         </div>
 
         {roles.length > 0 && <p className="role">{roles}</p>}

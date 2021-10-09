@@ -31,7 +31,9 @@ const About = forwardRef(({ animeClass, summary }, ref) => {
             <div className="my-image" />
           </div>
           <p
-            dangerouslySetInnerHTML={{ __html: summary.replace(/\n/g, '<br/>') }}
+            dangerouslySetInnerHTML={{
+              __html: summary.replace(/\n/g, '<br/>'),
+            }}
           />
         </div>
       </div>

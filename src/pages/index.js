@@ -95,7 +95,12 @@ const IndexPage = ({ pageContext }) => {
           projects={projects}
           scrolled={scrolled}
         />
-        <Skills ref={skillsEl} animeClass={getAnimeClass(3)} skills={skills} work={work} />
+        <Skills
+          ref={skillsEl}
+          animeClass={getAnimeClass(3)}
+          skills={skills}
+          work={work}
+        />
       </main>
       <Footer ref={footer} scrolled={scrolled} />
 

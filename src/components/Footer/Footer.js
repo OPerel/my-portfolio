@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"
+import React, { forwardRef } from 'react';
 // import ContactForm from './ContactForm/ContactForm';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import EmailIcon from '@material-ui/icons/Mail';

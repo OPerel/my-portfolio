@@ -81,6 +81,7 @@ div.work-tabs-nav {
     }
 
     span.work-period {
+      color: #{$main-text-color};
       font-size: 1rem;
 
       @media only screen and (min-width: $small-bp) {

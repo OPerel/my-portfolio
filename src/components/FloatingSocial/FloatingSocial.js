@@ -1,12 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 import './FloatingSocial.scss';
 // import Parallax from "../Parallax/Parallax"
 import GitHubIcon from '@material-ui/icons/GitHub';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import EmailIcon from '@material-ui/icons/Mail';
-import { PictureAsPdf } from "@material-ui/icons"
+import { PictureAsPdf } from '@material-ui/icons';
 const FloatingSocial = ({ animeClass }) => {
-
   const [hover, setHover] = useState(false);
 
   return (
@@ -50,9 +49,7 @@ const FloatingSocial = ({ animeClass }) => {
           >
             <PictureAsPdf />
           </a>
-          {hover && (
-            <span className="resume">Resume</span>
-          )}
+          {hover && <span className="resume">Resume</span>}
         </li>
       </ul>
     </div>

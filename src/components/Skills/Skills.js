@@ -1,4 +1,4 @@
-import React, { forwardRef } from "react"
+import React, { forwardRef } from 'react';
 import WorkTabs from './WorkTabs/WorkTabs';
 import RotatingTri from '../RotatingTri/RotatingTri';
 import './Skills.scss';

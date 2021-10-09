@@ -17,15 +17,15 @@ const WorkTabs = ({ work }) => {
     endDate,
     isCurrentRole,
     summary,
-    highlights
+    highlights,
   } = workPlaceData;
 
-  const getDate = (date) => {
+  const getDate = date => {
     return new Date(date).toLocaleDateString('default', {
       year: 'numeric',
-      month: 'short'
-    })
-  }
+      month: 'short',
+    });
+  };
 
   return (
     <div className="work-tabs-wrapper">
@@ -48,11 +48,7 @@ const WorkTabs = ({ work }) => {
             <b>{position}</b> @{' '}
           </span>
           {website ? (
-            <a
-              href={website}
-              target="_blank"
-              rel="noreferrer noopener"
-            >
+            <a href={website} target="_blank" rel="noreferrer noopener">
               {company}
             </a>
           ) : (
@@ -62,7 +58,7 @@ const WorkTabs = ({ work }) => {
           <span className="work-period">
             {getDate(startDate)}
             {' - '}
-            {isCurrentRole ?  'Present' : getDate(endDate)}
+            {isCurrentRole ? 'Present' : getDate(endDate)}
           </span>
         </h3>
         <p>{summary}</p>

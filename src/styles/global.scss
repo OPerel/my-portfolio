@@ -1,6 +1,7 @@
 // Colors
 $main-text-color: #AED6D4;
 $secondary-text-color: #FF3D00;
+$headers-text-color: #adfffc;
 $main-background-color: #090a16;
 $about-background-color: #226765;
 $skills-background-color: #0D5452;
@@ -45,7 +46,7 @@ main {
 h1, h2, h3, h4, h5, h6 {
   margin: 0.5em 0;
   font-family: 'Londrina Solid', sans-serif;
-  //font-size: 2rem;
+  color: $headers-text-color;
 }
 
 h2 {

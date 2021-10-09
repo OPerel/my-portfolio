@@ -5,8 +5,6 @@ import loadable from '@loadable/component';
 import useMediaQuery from '@material-ui/core/useMediaQuery';
 const Gallery = loadable(() => import('./Gallery/Gallery'));
 
-
-
 const Portfolio = ({ animeClass, projects, scrolled }) => {
   const matches = useMediaQuery('(min-width: 768px)');
 
