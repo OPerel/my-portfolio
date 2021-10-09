@@ -9,6 +9,23 @@ const WorkTabs = ({ work }) => {
   };
 
   const workPlaceData = work[activeTab];
+  const {
+    position,
+    company,
+    website,
+    startDate,
+    endDate,
+    isCurrentRole,
+    summary,
+    highlights
+  } = workPlaceData;
+
+  const getDate = (date) => {
+    return new Date(date).toLocaleDateString('default', {
+      year: 'numeric',
+      month: 'short'
+    })
+  }
 
   return (
     <div className="work-tabs-wrapper">
@@ -26,34 +43,31 @@ const WorkTabs = ({ work }) => {
         </div>
       </div>
       <div className="info">
-        <p className="work-title">
+        <h3 className="work-title">
           <span>
-            <b>{workPlaceData.position}</b> @{' '}
+            <b>{position}</b> @{' '}
           </span>
-          {workPlaceData.website ? (
+          {website ? (
             <a
-              href={workPlaceData.website}
+              href={website}
               target="_blank"
               rel="noreferrer noopener"
             >
-              {workPlaceData.company}
+              {company}
             </a>
           ) : (
-            <span>{workPlaceData.company}</span>
+            <span>{company}</span>
           )}
           &nbsp;
           <span className="work-period">
-            {new Date(workPlaceData.startDate).toLocaleDateString('default', {
-              year: 'numeric',
-              month: 'short'
-            })}
+            {getDate(startDate)}
             {' - '}
-            {workPlaceData.isCurrentRole ?  'Present' : workPlaceData.endDate}
+            {isCurrentRole ?  'Present' : getDate(endDate)}
           </span>
-        </p>
-        <p>{workPlaceData.summary}</p>
+        </h3>
+        <p>{summary}</p>
         <ul>
-          {workPlaceData.highlights.map((bullet, idx) => (
+          {highlights.map((bullet, idx) => (
             <li key={`${idx}-${bullet.split(' ')[0]}`}>{bullet}</li>
           ))}
         </ul>
