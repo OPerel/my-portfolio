@@ -3,7 +3,6 @@
 .card-wrapper {
   width: 100%;
   height: 100%;
-  border-radius: 5px;
   position: relative;
 }
 
@@ -11,8 +10,9 @@
   position: relative;
   height: 90%;
   margin: 0;
-  background-color: transparent; //#02B4FA42; #033432
+  background-color: #00000010;
   text-align: start;
+  border-radius: 10px;
   box-shadow: 2px 10px 15px -6px rgb(255 254 254 / 10%);
 
   @media only screen and (min-width: $small-bp) {
@@ -33,7 +33,7 @@
     }
 
     .card-title {
-      color: #fff; //#ffc57d;
+      color: #fff;
       font-size: 2rem;
     }
 
@@ -43,11 +43,30 @@
     }
   }
 
+  .img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 25%;
+    overflow: hidden;
+    background-blend-mode: overlay;
+    background-color: #011921;
+    background-size: cover;
+    z-index: -1;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    @media only screen and (min-width: $small-bp) {
+      height: 35%;
+    }
+  }
+
   .role {
     margin: 0;
     padding: 0 2%;
-    font-size: 1.3em;
-    color: #{$main-text-color}; //#c5c5c5;
+    font-size: 1.1rem;
+    color: #{$main-text-color};
   }
 
   .card-content {
@@ -61,16 +80,26 @@
 
     .project-description {
       padding-bottom: 2%;
+      padding-right: 1%;
       overflow-y: auto;
       line-height: 1.6rem;
 
-      -ms-overflow-style: none;  // IE and Edge
-      scrollbar-width: none;  // Firefox
+      // Firefox
+      scrollbar-width: thin;
+      scrollbar-color: #0e3634;
     }
 
     // Chrome and Safari
     .project-description::-webkit-scrollbar {
-      display: none;
+      width: 8px;
+
+    }
+    .project-description::-webkit-scrollbar-track {
+      background-color: #062422;
+    }
+
+    .project-description::-webkit-scrollbar-thumb {
+      background-color: #0e3634;
     }
 
     ul.techs {
@@ -91,23 +120,6 @@
 
     @media only screen and (min-width: $small-bp) {
       height: 45%;
-    }
-  }
-
-  .img-wrapper {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-    overflow: hidden;
-    background-blend-mode: overlay;
-    background-color: #011921;
-    background-size: cover;
-    z-index: -1;
-
-    @media only screen and (min-width: $small-bp) {
-      height: 35%;
     }
   }
 }
