@@ -34,7 +34,12 @@ module.exports = {
     },
     `gatsby-plugin-gatsby-cloud`,
     `gatsby-plugin-sass`,
-    `gatsby-plugin-webpack-bundle-analyser-v2`,
+    {
+      resolve: `gatsby-plugin-webpack-bundle-analyser-v2`,
+      options: {
+        disable: true,
+      },
+    },
     `gatsby-plugin-material-ui`,
     'gatsby-plugin-loadable-components-ssr',
     {
