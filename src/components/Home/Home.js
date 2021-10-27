@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from "react"
 import bgImg from '../../assets/images/home-bg.webp';
-import wheel from '../../assets/images/wheel.svg';
+// import wheel from '../../assets/images/wheel.svg';
 import './Home.scss';
 import Parallax from '../Parallax/Parallax';
+import Text from './Text/Text';
+import AnimatedHeader from "./AnimatedHeader/AnimatedHeader"
 
 const Home = ({ animeClass, name, label }) => {
+
+  const [showText, setShowText] = useState(false);
+  const [hover, setHover] = useState(false);
+
   return (
     <section className="app-home">
       <div className="home-container">
@@ -24,12 +30,13 @@ const Home = ({ animeClass, name, label }) => {
         >
           <h2>
             Full Stack{' '}
-            <span className="header-on-hover">
-              <span className="header">{label}</span>
-              <div className="rotating-wrapper">
-                <img src={wheel} alt="wheel of dhamma" className="rotating" />
-              </div>
-            </span>
+            <AnimatedHeader
+              hover={hover}
+              setHover={setHover}
+              setShowText={setShowText}
+              showText={showText}
+              label={label}
+            />
           </h2>
         </Parallax>
       </div>
@@ -41,6 +48,8 @@ const Home = ({ animeClass, name, label }) => {
       >
         <img className="bg" src={bgImg} alt="hex" />
       </Parallax>
+
+      {showText && <Text setShowText={setShowText} setHover={setHover} />}
     </section>
   );
 };

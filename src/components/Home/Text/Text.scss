@@ -1,0 +1,45 @@
+@import '../../../styles/global.scss';
+
+#text {
+  position: absolute;
+  top: 5rem;
+  right: 7rem;
+  width: 22vw;
+  height: min-content;//70vh;
+  padding: 0 2rem;
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+#text p {
+  font-size: 1.05rem;
+  line-height: 1.3;
+
+  span {
+    margin-left: 0.2rem;
+    border-right: 2px solid #{$secondary-text-color};
+    animation: blink-caret 0.7s steps(1) infinite;;
+  }
+
+  img.rotating {
+    display: inline-block;
+    width: 1.05rem;
+    height: 1.05rem;
+    margin-right: 0.5rem;
+    animation: rotate 7s linear 0s infinite;
+    vertical-align: middle;
+  }
+}
+
+@keyframes blink-caret {
+  50% { border-color: transparent }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
