@@ -11,7 +11,7 @@
     "axios": "^0.21.4",
     "css-vars-hook": "^0.2.5",
     "gatsby": "^3.14.3",
-    "gatsby-plugin-ackee-tracker": "^3.0.3",
+    "gatsby-plugin-ackee-tracker": "^3.1.0",
     "gatsby-plugin-gatsby-cloud": "^2.11.0",
     "gatsby-plugin-image": "^1.14.1",
     "gatsby-plugin-loadable-components-ssr": "^3.4.0",

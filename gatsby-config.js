@@ -42,21 +42,21 @@ module.exports = {
     // },
     `gatsby-plugin-material-ui`,
     'gatsby-plugin-loadable-components-ssr',
-    {
-      resolve: 'gatsby-plugin-ackee-tracker',
-      options: {
-        // Domain ID found when adding a domain in the admin panel.
-        domainId: process.env.ACKEE_DOMAIN_ID,
-        // URL to Server eg: "https://analytics.test.com".
-        server: process.env.ACKEE_SERVER,
-        // Disabled analytic tracking when running locally
-        ignoreLocalhost: false,
-        // Enable or disable the tracking of your own visits (as identified by your login to the Ackee dashboard).
-        ignoreOwnVisits: false,
-        // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
-        detailed: true,
-      },
-    },
+    // {
+    //   resolve: 'gatsby-plugin-ackee-tracker',
+    //   options: {
+    //     // Domain ID found when adding a domain in the admin panel.
+    //     domainId: process.env.ACKEE_DOMAIN_ID,
+    //     // URL to Server eg: "https://analytics.test.com".
+    //     server: process.env.ACKEE_SERVER,
+    //     // Disabled analytic tracking when running locally
+    //     ignoreLocalhost: false,
+    //     // Enable or disable the tracking of your own visits (as identified by your login to the Ackee dashboard).
+    //     ignoreOwnVisits: false,
+    //     // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
+    //     detailed: true,
+    //   },
+    // },
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

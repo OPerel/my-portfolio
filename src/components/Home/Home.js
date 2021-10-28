@@ -1,13 +1,11 @@
-import React, { useState } from "react"
+import React, { useState } from 'react';
 import bgImg from '../../assets/images/home-bg.webp';
-// import wheel from '../../assets/images/wheel.svg';
 import './Home.scss';
 import Parallax from '../Parallax/Parallax';
 import Text from './Text/Text';
-import AnimatedHeader from "./AnimatedHeader/AnimatedHeader"
+import AnimatedHeader from './AnimatedHeader/AnimatedHeader';
 
 const Home = ({ animeClass, name, label }) => {
-
   const [showText, setShowText] = useState(false);
   const [hover, setHover] = useState(false);
 
