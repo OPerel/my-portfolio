@@ -1,0 +1,50 @@
+@import '../../../styles/global.scss';
+
+span.header, span.header-on-hover {
+  color: #{$secondary-text-color};
+}
+
+span.header-on-hover{
+  display: inline-flex;
+  justify-content: space-between;
+  width: 5.5em;
+  cursor: text;
+  z-index: 3;
+}
+
+.hover:before {
+  content: "Philosopher";
+}
+
+.hover span.header {
+    display: none;
+}
+
+.hover div.rotating-wrapper {
+  display: inline-block;
+}
+
+.hover img.rotating {
+  display: inline-block;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+div.rotating-wrapper {
+  display: none;
+}
+
+img.rotating {
+  display: none;
+  width: 20px;
+  height: 20px;
+  animation: rotate 7s linear 0s infinite;
+  vertical-align: middle;
+}
