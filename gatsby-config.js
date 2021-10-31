@@ -50,9 +50,9 @@ module.exports = {
         // URL to Server eg: "https://analytics.test.com".
         server: process.env.ACKEE_SERVER,
         // Disabled analytic tracking when running locally
-        ignoreLocalhost: process.env.NODE_ENV === 'production',
+        ignoreLocalhost: true,
         // Enable or disable the tracking of your own visits (as identified by your login to the Ackee dashboard).
-        ignoreOwnVisits: process.env.NODE_ENV === 'production',
+        ignoreOwnVisits: true,
         // If enabled it will collect info on OS, BrowserInfo, Device  & ScreenSize
         detailed: true,
       },
