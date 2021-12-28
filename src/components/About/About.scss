@@ -3,6 +3,10 @@
 .app-about {
   background-color: #0e3634;// #001715; // $about-background-color;
 
+  a {
+    color: #{$secondary-text-color};
+  }
+
   .about-content {
     display: block;
 
