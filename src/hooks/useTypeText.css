@@ -1,9 +1,0 @@
-span#caret {
-  margin-left: 0.2em;
-  border-right: 2px solid;
-  animation: blink-caret 0.7s steps(1) infinite;;
-}
-
-@keyframes blink-caret {
-  50% { visibility: hidden }
-}

@@ -2,14 +2,10 @@ import React, { useState } from 'react';
 import bgImg from '../../assets/images/home-bg.webp';
 import './Home.scss';
 import Parallax from '../Parallax/Parallax';
-import Text from './Text/Text';
 import AnimatedHeader from './AnimatedHeader/AnimatedHeader';
-import useMediaQuery from "@material-ui/core/useMediaQuery"
 
 const Home = ({ animeClass, name, label }) => {
-  const [showText, setShowText] = useState(false);
   const [hover, setHover] = useState(false);
-  const matches = useMediaQuery('(min-width: 1500px)');
 
   return (
     <section className="app-home">
@@ -33,8 +29,6 @@ const Home = ({ animeClass, name, label }) => {
             <AnimatedHeader
               hover={hover}
               setHover={setHover}
-              setShowText={setShowText}
-              showText={showText}
               label={label}
             />
           </h2>
@@ -49,7 +43,6 @@ const Home = ({ animeClass, name, label }) => {
         <img className="bg" src={bgImg} alt="hex" />
       </Parallax>
 
-      {matches && (showText && <Text setShowText={setShowText} setHover={setHover} />)}
     </section>
   );
 };
