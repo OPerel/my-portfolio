@@ -12,7 +12,7 @@ const initialPosition = {
 
 const ScrollContext = createContext({
   position: initialPosition,
-  handleNavigation: () => {},
+  handleNavigation: (to) => {},
 });
 export const useScrollContext = () => useContext(ScrollContext);
 
