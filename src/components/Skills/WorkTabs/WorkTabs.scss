@@ -2,7 +2,7 @@
 
 .work-tabs-wrapper {
   display: grid;
-  margin-top: 4%;
+  margin-top: 2.5%;
 
   @media only screen and (min-width: $small-bp) {
     height: 100%;
@@ -43,7 +43,7 @@ div.work-tabs-nav {
       color: #{$secondary-text-color};
       background-color: #1E202337;
       border-bottom: 0.5px solid;
-      font-weight: 600;
+      font-weight: 500;
     }
 
     @media only screen and (min-width: $small-bp) {
@@ -93,6 +93,8 @@ div.work-tabs-nav {
   ul {
     padding-inline-start: 3%;
     line-height: 1.5rem;
+    max-height: 47.5vh;
+    overflow-y: auto;
 
     li {
       padding: 0 0 2% 1%;

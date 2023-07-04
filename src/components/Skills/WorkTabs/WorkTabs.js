@@ -47,13 +47,7 @@ const WorkTabs = ({ work }) => {
           <span>
             <b>{position}</b> @{' '}
           </span>
-          {website ? (
-            <a href={website} target="_blank" rel="noreferrer noopener">
-              {company}
-            </a>
-          ) : (
-            <span>{company}</span>
-          )}
+          <CompanyName company={company} website={website} />
           &nbsp;
           <span className="work-period">
             {getDate(startDate)}
@@ -73,3 +67,33 @@ const WorkTabs = ({ work }) => {
 };
 
 export default WorkTabs;
+
+const CompanyName = ({ company, website }) => {
+  if (company.includes('via')) {
+    const companies = company.split('via');
+    const websites = website.split(',');
+    return (
+      <>
+        <a href={websites[0]} target="_blank" rel="noreferrer noopener">
+          {companies[0]}
+        </a>
+        &nbsp;
+        <span>via</span>
+        &nbsp;
+        <a href={websites[1]} target="_blank" rel="noreferrer noopener">
+          {companies[1]}
+        </a>
+      </>
+    );
+  }
+
+  if (website) {
+    return (
+      <a href={website} target="_blank" rel="noreferrer noopener">
+        {company}
+      </a>
+    );
+  }
+
+  return <span>{company}</span>;
+};
