@@ -1,7 +1,7 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import KeyboardArrowUpTwoToneIcon from '@material-ui/icons/KeyboardArrowUpTwoTone';
-import KeyboardArrowDownTwoToneIcon from '@material-ui/icons/KeyboardArrowDownTwoTone';
+import Button from '@mui/material/Button';
+import KeyboardArrowUpTwoToneIcon from '@mui/icons-material/KeyboardArrowUpTwoTone';
+import KeyboardArrowDownTwoToneIcon from '@mui/icons-material/KeyboardArrowDownTwoTone';
 
 import { useScrollContext } from '../ScrollingProvider';
 import './ArrowNav.scss';

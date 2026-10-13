@@ -1,11 +1,11 @@
 import React, { useLayoutEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper';
+import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import Button from '@material-ui/core/Button';
-import ChevronLeftTwoToneIcon from '@material-ui/icons/ChevronLeftTwoTone';
-import ChevronRightTwoToneIcon from '@material-ui/icons/ChevronRightTwoTone';
+import Button from '@mui/material/Button';
+import ChevronLeftTwoToneIcon from '@mui/icons-material/ChevronLeftTwoTone';
+import ChevronRightTwoToneIcon from '@mui/icons-material/ChevronRightTwoTone';
 import ProjectCard from './Card/Card';
 import './Gallery.scss';
 

@@ -1,12 +1,10 @@
-import React, { forwardRef } from 'react';
-// import ContactForm from './ContactForm/ContactForm';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import EmailIcon from '@material-ui/icons/Mail';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
+import React, { forwardRef, lazy, Suspense } from 'react';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import EmailIcon from '@mui/icons-material/Mail';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import './Footer.scss';
 
-import loadable from '@loadable/component';
-const ContactForm = loadable(() => import('./ContactForm/ContactForm'));
+const ContactForm = lazy(() => import('./ContactForm/ContactForm'));
 
 const Footer = forwardRef(({ scrolled }, ref) => (
   <footer ref={ref}>
@@ -41,7 +39,9 @@ const Footer = forwardRef(({ scrolled }, ref) => (
       </div>
 
       {scrolled ? (
-        <ContactForm />
+        <Suspense fallback={null}>
+          <ContactForm />
+        </Suspense>
       ) : (
         <form
           name="contact-form"

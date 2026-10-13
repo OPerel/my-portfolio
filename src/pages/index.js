@@ -84,7 +84,6 @@ const IndexPage = ({ pageContext }) => {
 
   return (
     <div>
-      <Seo />
       <Header />
       <FloatingSocial animeClass={currentPage <= 3 ? 'on-s' : 'over-s'} />
       <main ref={main}>
@@ -108,5 +107,7 @@ const IndexPage = ({ pageContext }) => {
     </div>
   );
 };
+
+export const Head = () => <Seo />;
 
 export default IndexPage;

@@ -1,7 +1,7 @@
 import React, { useReducer } from 'react';
-import TextField from '@material-ui/core/TextField';
+import TextField from '@mui/material/TextField';
 import { doValidation, encode } from '../../../utils/formUtil';
-import Button from '@material-ui/core/Button';
+import Button from '@mui/material/Button';
 
 const initialFormState = {
   name: {

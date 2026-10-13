@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import './FloatingSocial.scss';
 // import Parallax from "../Parallax/Parallax"
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import EmailIcon from '@material-ui/icons/Mail';
-import { PictureAsPdf } from '@material-ui/icons';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import EmailIcon from '@mui/icons-material/Mail';
+import { PictureAsPdf } from '@mui/icons-material';
 const FloatingSocial = ({ animeClass }) => {
   const [hover, setHover] = useState(false);
 

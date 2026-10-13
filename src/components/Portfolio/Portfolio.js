@@ -1,9 +1,8 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Parallax from '../Parallax/Parallax';
 import './Portfolio.scss';
-import loadable from '@loadable/component';
-import useMediaQuery from '@material-ui/core/useMediaQuery';
-const Gallery = loadable(() => import('./Gallery/Gallery'));
+import useMediaQuery from '@mui/material/useMediaQuery';
+const Gallery = lazy(() => import('./Gallery/Gallery'));
 
 const Portfolio = ({ animeClass, projects, scrolled }) => {
   const matches = useMediaQuery('(min-width: 768px)');
@@ -17,7 +16,11 @@ const Portfolio = ({ animeClass, projects, scrolled }) => {
         animeClass={animeClass}
         positions={{ on: matches ? 5 : 0, over: -50, under: 60 }}
       >
-        {scrolled && <Gallery projects={projects} />}
+        {scrolled && (
+          <Suspense fallback={null}>
+            <Gallery projects={projects} />
+          </Suspense>
+        )}
       </Parallax>
     </section>
   );

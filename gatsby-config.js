@@ -9,7 +9,6 @@ module.exports = {
     author: `Ori Perelman`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -20,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-emotion`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -40,8 +40,6 @@ module.exports = {
     //     disable: true,
     //   },
     // },
-    `gatsby-plugin-material-ui`,
-    'gatsby-plugin-loadable-components-ssr',
     // {
     //   resolve: 'gatsby-plugin-ackee-tracker',
     //   options: {

@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-function Seo() {
+function Seo({ title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -18,49 +17,21 @@ function Seo() {
   );
 
   const metaDescription = site.siteMetadata.description;
-  const title = site.siteMetadata?.title;
+  const pageTitle = title || site.siteMetadata?.title;
 
   return (
-    <Helmet
-      htmlAttributes={{
-        lang: 'en',
-      }}
-      title={title}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata?.author || ``,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-      ].concat([])}
-    />
+    <>
+      <html lang="en" />
+      <title>{pageTitle}</title>
+      <meta name="description" content={metaDescription} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={metaDescription} />
+      <meta property="og:type" content="website" />
+      <meta name="twitter:card" content="summary" />
+      <meta name="twitter:creator" content={site.siteMetadata?.author || ''} />
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={metaDescription} />
+    </>
   );
 }
 

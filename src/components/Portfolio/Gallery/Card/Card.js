@@ -1,8 +1,8 @@
 import React from 'react';
 import './Card.scss';
-import Button from '@material-ui/core/Button';
-import GitHubIcon from '@material-ui/icons/GitHub';
-import LanguageIcon from '@material-ui/icons/Language';
+import Button from '@mui/material/Button';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LanguageIcon from '@mui/icons-material/Language';
 
 const ProjectCard = ({ project }) => {
   const { images, libraries, languages, roles } = project;
